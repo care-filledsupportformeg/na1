@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Information on recovery and relapse in Narcotics Anonymous (NA). Understanding the NA perspective on these critical aspects of the journey to stay clean.">
+    <meta name="keywords" content="NA, Narcotics Anonymous, recovery, relapse, staying clean, addiction recovery, NA program">
+    <title>Recovery and Relapse - Narcotics Anonymous</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-sky-50">
+
+    <!-- Navbar (standard structure) -->
+    <nav class="navbar-bg">
+        <div class="navbar-container">
+            <div class="navbar-flex-container">
+                <div class="navbar-logo-flex">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg class="navbar-logo-svg" fill="none" viewBox="0 0 100 100" stroke="currentColor"><circle cx="50" cy="50" r="40" stroke-width="5" /><rect x="30" y="30" width="40" height="40" stroke-width="5" transform="rotate(45 50 50)" /><text x="50" y="55" text-anchor="middle" font-size="20" font-weight="bold" fill="white">NA</text></svg>
+                        <span class="navbar-logo-text">NA Website</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="navbar-links-flex">
+                        <a href="index.html" class="navbar-link">Home</a>
+                        <a href="whatIsNA.html" class="navbar-link">What is NA?</a>
+                        <div class="nav-dropdown">
+                            <button class="navbar-link flex items-center">The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                            <div class="nav-dropdown-content nav-dropdown-max-height"><!-- Populated by JS --></div>
+                        </div>
+                        <a href="traditions.html" class="navbar-link">The 12 Traditions</a>
+                        <a href="recoveryRelapse.html" class="navbar-link navbar-link-active">Recovery & Relapse</a>
+                        <a href="jft.html" class="navbar-link">Just For Today</a>
+                    </div>
+                </div>
+                <div class="md:hidden -mr-2 flex">
+                    <button type="button" class="navbar-mobile-menu-button-styles" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="navbar-mobile-menu-icon" id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg class="navbar-mobile-menu-icon hidden" id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="navbar-mobile-menu-links-container">
+                <a href="index.html" class="navbar-mobile-link">Home</a>
+                <a href="whatIsNA.html" class="navbar-mobile-link">What is NA?</a>
+                <div class="nav-dropdown-mobile">
+                    <button class="navbar-mobile-link w-full text-left flex justify-between items-center" id="mobile-steps-button">The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                    <div class="pl-4 hidden" id="mobile-steps-dropdown"><!-- Populated by JS --></div>
+                </div>
+                <a href="traditions.html" class="navbar-mobile-link">The 12 Traditions</a>
+                <a href="recoveryRelapse.html" class="navbar-mobile-link navbar-mobile-link-active">Recovery & Relapse</a>
+                <a href="jft.html" class="navbar-mobile-link">Just For Today</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="animate-fadeIn container-mx-auto py-8">
+        <div class="bg-white p-6 md:p-10 rounded-xl shadow-xl prose max-w-3xl mx-auto">
+            <header class="mb-8 border-b pb-4 border-sky-200">
+              <h1 class="text-4xl font-bold text-sky-700">Recovery and Relapse</h1>
+            </header>
+            
+            <p class="mb-4">Many people think that recovery is simply a matter of not using drugs. They consider a relapse a sign of complete failure, and long periods of abstinence a sign of complete success. We in the recovery program of Narcotics Anonymous have found that this perception is too simplistic. After a member has had some involvement in our Fellowship, a relapse may be the jarring experience that brings about a more rigorous application of the program. By the same token we have observed some members who remain abstinent for long periods of time whose dishonesty and self-deceit still prevent them from enjoying complete recovery and acceptance within society. Complete and continuous abstinence, however, in close association and identification with others in NA groups, is still the best ground for growth.</p>
+            <p class="mb-4">Although all addicts are basically the same in kind, we do, as individuals, differ in degree of sickness and rate of recovery. There may be times when a relapse lays the groundwork for complete freedom. At other times that freedom can only be achieved by a grim and obstinate willfulness to hang on to abstinence come hell or high water until a crisis passes. An addict, who by any means can lose, even for a time, the need or desire to use, and has free choice over impulsive thinking and compulsive action, has reached a turning point that may be the decisive factor in his recovery.</p>
+            <p class="mb-4">We have seen addicts come to our Fellowship, try our program and stay clean for a period of time. Over time some addicts lost contact with other recovering addicts and eventually returned to active addiction. They forgot that it is really the first drug that starts the deadly cycle all over again. They tried to control it, to use in moderation, or to use just certain drugs. None of these control methods work for addicts.</p>
+            <p class="mb-4">Relapse is a reality. It can and does happen. Experience shows that those who do not work our program of recovery on a daily basis may relapse. We see them come back seeking recovery. Maybe they were clean for years before their relapse. If they are lucky enough to make it back, they are shaken badly. They tell us that the relapse was more horrible than earlier use. We have never seen a person who lives the Narcotics Anonymous Program relapse.</p>
+            <p>Relapses are often fatal. We have attended funerals of loved ones who died from a relapse. They died in various ways. Often we see relapsers lost for years, living in misery. Those who make it to jail or institutions may survive and perhaps have a reintroduction to NA.</p>
+        </div>
+    </main>
+
+    <!-- Footer (standard structure) -->
+    <footer class="footer">
+        <div class="container-mx-auto">
+            <div class="mb-6"><h3 class="text-xl font-semibold text-sky-800 mb-3">Literature & Resources</h3><ul class="list-none space-y-2 text-gray-600"><li><a href="assets/basic-text-sixth-edition.pdf" target="_blank">Basic Text of Narcotics Anonymous (Sixth Edition)</a></li><li><a href="assets/it-works-how-and-why.pdf" target="_blank">It Works How and Why</a></li><li><a href="assets/step-working-guide.pdf" target="_blank">The NA Step Working Guides</a></li><li><a href="assets/just-for-today.pdf" target="_blank">Just For Today (Full PDF)</a></li></ul></div>
+            <p>&copy; <span id="currentYear"></span> NA Information Website. Content adapted from NA Fellowship-approved literature.</p>
+            <p>Narcotics Anonymous, NA, and the NA Way are registered trademarks of Narcotics Anonymous World Services, Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Standard Navbar, Footer Year, Steps Dropdown JS (from index.html)
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+        const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuIconOpen.classList.toggle('hidden');
+            mobileMenuIconClose.classList.toggle('hidden');
+        });
+        const mobileStepsButton = document.getElementById('mobile-steps-button');
+        const mobileStepsDropdown = document.getElementById('mobile-steps-dropdown');
+        if (mobileStepsButton && mobileStepsDropdown) {
+            mobileStepsButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                mobileStepsDropdown.classList.toggle('hidden');
+            });
+        }
+        const navLinks = document.querySelectorAll('.navbar-link, .navbar-mobile-link');
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            // Standard active state logic
+            if (linkPath === currentPath && linkPath !== '') { 
+                link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+            } else if ((currentPath === 'index.html' || currentPath === '') && linkPath === 'index.html') {
+                link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+            } else {
+                link.classList.remove('navbar-link-active', 'navbar-mobile-link-active');
+            }
+            // Specific active state for recoveryRelapse.html
+            if (currentPath === 'recoveryRelapse.html' && linkPath === 'recoveryRelapse.html') {
+                link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+            }
+        });
+
+        const stepsDataForNav = Array.from({length: 12}, (_, i) => ({id: i + 1, title: `Step ${i + 1}`}));
+        const desktopDropdown = document.querySelector('.nav-dropdown-content');
+        const mobileDropdownContainerForNav = document.getElementById('mobile-steps-dropdown');
+        if (desktopDropdown) { desktopDropdown.innerHTML = ''; stepsDataForNav.forEach(step => { const a = document.createElement('a'); a.href = `step${step.id}.html`; a.textContent = step.title; desktopDropdown.appendChild(a); });}
+        if (mobileDropdownContainerForNav) { mobileDropdownContainerForNav.innerHTML = ''; stepsDataForNav.forEach(step => { const a = document.createElement('a'); a.href = `step${step.id}.html`; a.textContent = step.title; a.className = 'navbar-mobile-link block'; mobileDropdownContainerForNav.appendChild(a); });}
+    </script>
+</body>
+</html>

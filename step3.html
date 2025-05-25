@@ -3,191 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NA Step 3: Detailed Visual Breakdown</title>
+    <title>Step 3 - Narcotics Anonymous</title>
+    <meta name="description" content="Guidance on Step 3 of Narcotics Anonymous: We made a decision to turn our will and our lives over to the care of God as we understood Him. Learn about surrender and trust.">
+    <meta name="keywords" content="NA, Narcotics Anonymous, Step 3, decision, surrender, Higher Power, trust, God as we understood Him, recovery">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #e0f2fe;
-        }
-        .container-fluid {
-            padding: 1rem;
-        }
-        @media (min-width: 640px) {
-            .container-fluid {
-                padding: 2rem;
-            }
-        }
-        .main-title {
-            color: #0c4a6e;
-            margin-bottom: 2rem;
-        }
-        .step-box {
-            background-color: #0ea5e9;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .card {
-            background-color: #ffffff;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-        }
-        .card-header {
-            background-color: #7dd3fc;
-            color: #0c4a6e;
-            padding: 1rem 1.5rem;
-            border-bottom: 1px solid #bae6fd;
-        }
-        .card-content {
-            padding: 1.5rem;
-            color: #374151;
-        }
-        .highlight {
-            color: #0369a1;
-            font-weight: 600;
-        }
-        .emphasis {
-            font-style: italic;
-            color: #0ea5e9;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
-        .key-themes-card {
-            background-color: #f0f9ff;
-            border: 2px solid #7dd3fc;
-        }
-        .key-themes-header {
-            background-color: #38bdf8;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body class="container-fluid">
+<body class="step-page-background">
 
-    <header class="text-center my-8">
-        <h1 class="main-title text-3xl sm:text-4xl md:text-5xl font-bold">
-            A Deep Dive into Step Three of Narcotics Anonymous
-        </h1>
-    </header>
-
-    <div class="step-box">
-        <h2 class="text-2xl sm:text-3xl font-semibold">Step Three: "We made a decision to turn our will and our lives over to the care of God as we understood Him."</h2>
-    </div>
-
-    <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from the Basic Text</h3>
+    <!-- Navbar -->
+    <nav class="navbar-bg">
+        <div class="navbar-container">
+            <div class="navbar-flex-container">
+                <div class="navbar-logo-flex">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg class="navbar-logo-svg" fill="none" viewBox="0 0 100 100" stroke="currentColor">
+                          <circle cx="50" cy="50" r="40" stroke-width="5" />
+                          <rect x="30" y="30" width="40" height="40" stroke-width="5" transform="rotate(45 50 50)" />
+                          <text x="50" y="55" text-anchor="middle" font-size="20" font-weight="bold" fill="white">NA</text>
+                        </svg>
+                        <span class="navbar-logo-text">NA Website</span>
+                    </a>
                 </div>
-                <div class="card-content">
-                    <p class="mb-3">The Basic Text presents Step Three as a pivotal point in recovery: moving from self-will to trusting a Power greater than ourselves.</p>
-                    <ul>
-                        <li><span class="highlight">Decision and Action:</span> Step Three is not just about belief, but about making a conscious decision to trust and act differently.</li>
-                        <li><span class="highlight">Letting Go of Self-Will:</span> Addicts often try to control everything. Step Three is about letting go of that control and accepting help.</li>
-                        <li><span class="highlight">"God as We Understood Him":</span> The step is inclusive—members are encouraged to define their own concept of a Higher Power.</li>
-                        <li><span class="highlight">Freedom from Fear:</span> Turning our will and life over brings relief from the fear and anxiety of trying to manage everything alone.</li>
-                        <li><span class="highlight">Foundation for Spiritual Growth:</span> This step is the beginning of a new relationship with a Higher Power, which continues to develop through the steps.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">The Basic Text emphasizes that Step Three is a process, often requiring repeated effort and growing trust.</p>
+                <div class="hidden md:block">
+                    <div class="navbar-links-flex">
+                        <a href="index.html" class="navbar-link">Home</a>
+                        <a href="whatIsNA.html" class="navbar-link">What is NA?</a>
+                        <div class="nav-dropdown">
+                            <button class="navbar-link flex items-center navbar-link-active"> <!-- Active state for 12 Steps parent -->
+                                The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div class="nav-dropdown-content nav-dropdown-max-height">
+                                <!-- Populated by JS, stepX.html link will be styled as active by JS -->
+                            </div>
+                        </div>
+                        <a href="traditions.html" class="navbar-link">The 12 Traditions</a>
+                        <a href="recoveryRelapse.html" class="navbar-link">Recovery & Relapse</a>
+                        <a href="jft.html" class="navbar-link">Just For Today</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from "It Works: How and Why"</h3>
-                </div>
-                <div class="card-content">
-                    <p class="mb-3">"It Works: How and Why" explores the spiritual and practical implications of Step Three.</p>
-                    <ul>
-                        <li><span class="highlight">Willingness and Faith:</span> Making the decision to turn our will and lives over requires willingness and the beginnings of faith.</li>
-                        <li><span class="highlight">Trusting the Process:</span> Step Three is about learning to trust the recovery process, the fellowship, and a Power greater than ourselves.</li>
-                        <li><span class="highlight">Letting Go of Outcomes:</span> We stop trying to control results and start focusing on doing the next right thing.</li>
-                        <li><span class="highlight">Personal Understanding:</span> Each member's understanding of a Higher Power is respected and encouraged to evolve.</li>
-                        <li><span class="highlight">Action Follows Decision:</span> The decision of Step Three is put into action by working the rest of the steps and living the principles.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">"It Works" highlights that Step Three is about surrender, trust, and beginning to live a new way.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from the Step Working Guides</h3>
-                </div>
-                <div class="card-content">
-                    <p class="mb-3">The Step Working Guides provide practical questions and exercises for Step Three.</p>
-                    <ul>
-                        <li><span class="highlight">What Does "Turning Over" Mean?:</span> Encourages reflection on what it means to turn our will and lives over, and what that looks like in daily life.</li>
-                        <li><span class="highlight">Barriers to Surrender:</span> Prompts members to identify fears, doubts, or reservations about letting go of control.</li>
-                        <li><span class="highlight">Developing Trust:</span> Asks about experiences of trusting others, the fellowship, or a Higher Power, and how trust can grow.</li>
-                        <li><span class="highlight">Acting on Faith:</span> Encourages taking small steps in faith, even when uncertain, and noticing the results.</li>
-                        <li><span class="highlight">Personal Experience:</span> Invites members to share times when turning things over led to positive outcomes or relief.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">The guides help make Step Three an ongoing, practical commitment—one that deepens with experience.</p>
+                <div class="md:hidden -mr-2 flex">
+                    <button type="button" class="navbar-mobile-menu-button-styles" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="navbar-mobile-menu-icon" id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg class="navbar-mobile-menu-icon hidden" id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
                 </div>
             </div>
         </div>
-
-        <div class="card key-themes-card mt-8">
-            <div class="card-header key-themes-header">
-                <h3 class="text-2xl font-semibold text-center">Key Themes & Synthesis of Step Three</h3>
-            </div>
-            <div class="card-content">
-                <p class="mb-4 text-lg">Step Three is the step of decision, surrender, and trust. Key themes include:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">1. Surrender and Trust</h4>
-                        <p>Step Three is about surrendering self-will and learning to trust a Power greater than ourselves, the NA program, and the process of recovery.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">2. Action and Decision</h4>
-                        <p>Making a decision is only the beginning—real change comes from putting that decision into action by working the steps and living the principles.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">3. Freedom from Fear</h4>
-                        <p>Letting go of control brings relief from fear, anxiety, and the burden of trying to manage everything alone.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">4. Personal Spiritual Path</h4>
-                        <p>Each member's relationship with a Higher Power is unique and respected. Step Three encourages exploration and growth.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">5. Letting Go of Outcomes</h4>
-                        <p>Step Three is about focusing on doing the next right thing, rather than trying to control results.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">6. Ongoing Process</h4>
-                        <p>Turning our will and lives over is not a one-time event, but an ongoing process that deepens as we continue in recovery.</p>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="navbar-mobile-menu-links-container">
+                <a href="index.html" class="navbar-mobile-link">Home</a>
+                <a href="whatIsNA.html" class="navbar-mobile-link">What is NA?</a>
+                <div class="nav-dropdown-mobile">
+                    <button class="navbar-mobile-link w-full text-left flex justify-between items-center navbar-mobile-link-active" id="mobile-steps-button"> <!-- Active state for 12 Steps parent -->
+                        The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div class="pl-4 hidden" id="mobile-steps-dropdown">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
-                <p class="mt-6 text-center text-lg font-medium text-sky-800">
-                    Step Three is the turning point where we begin to live by spiritual principles, trusting that we are cared for and guided in our recovery.
-                </p>
+                <a href="traditions.html" class="navbar-mobile-link">The 12 Traditions</a>
+                <a href="recoveryRelapse.html" class="navbar-mobile-link">Recovery & Relapse</a>
+                <a href="jft.html" class="navbar-mobile-link">Just For Today</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <footer class="mt-12 text-center text-sm text-sky-700 py-6">
-        <p>&copy; <span id="year"></span> NA Step Three Breakdown. For informational and reflective purposes.</p>
+    <main class="animate-fadeIn container-mx-auto py-8">
+        <header class="text-center my-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-sky-700 mb-8">
+                A Deep Dive into Step Three of Narcotics Anonymous
+            </h1>
+        </header>
+
+        <div class="bg-sky-500 text-white p-6 rounded-lg mb-8 text-center shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-semibold">Step Three: "We made a decision to turn our will and our lives over to the care of God as we understood Him."</h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from the Basic Text</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">The Basic Text presents Step Three as a pivotal point in recovery: moving from self-will to trusting a Power greater than ourselves.</p>
+                        <ul>
+                            <li><span class="highlight">Decision and Action:</span> Step Three is not just about belief, but about making a conscious decision to trust and act differently.</li>
+                            <li><span class="highlight">Letting Go of Self-Will:</span> Addicts often try to control everything. Step Three is about letting go of that control and accepting help.</li>
+                            <li><span class="highlight">"God as We Understood Him":</span> The step is inclusive—members are encouraged to define their own concept of a Higher Power.</li>
+                            <li><span class="highlight">Freedom from Fear:</span> Turning our will and life over brings relief from the fear and anxiety of trying to manage everything alone.</li>
+                            <li><span class="highlight">Foundation for Spiritual Growth:</span> This step is the beginning of a new relationship with a Higher Power, which continues to develop through the steps.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">The Basic Text emphasizes that Step Three is a process, often requiring repeated effort and growing trust.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from "It Works: How and Why"</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">"It Works: How and Why" explores the spiritual and practical implications of Step Three.</p>
+                        <ul>
+                            <li><span class="highlight">Willingness and Faith:</span> Making the decision to turn our will and lives over requires willingness and the beginnings of faith.</li>
+                            <li><span class="highlight">Trusting the Process:</span> Step Three is about learning to trust the recovery process, the fellowship, and a Power greater than ourselves.</li>
+                            <li><span class="highlight">Letting Go of Outcomes:</span> We stop trying to control results and start focusing on doing the next right thing.</li>
+                            <li><span class="highlight">Personal Understanding:</span> Each member's understanding of a Higher Power is respected and encouraged to evolve.</li>
+                            <li><span class="highlight">Action Follows Decision:</span> The decision of Step Three is put into action by working the rest of the steps and living the principles.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">"It Works" highlights that Step Three is about surrender, trust, and beginning to live a new way.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from the Step Working Guides</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">The Step Working Guides provide practical questions and exercises for Step Three.</p>
+                        <ul>
+                            <li><span class="highlight">What Does "Turning Over" Mean?:</span> Encourages reflection on what it means to turn our will and lives over, and what that looks like in daily life.</li>
+                            <li><span class="highlight">Barriers to Surrender:</span> Prompts members to identify fears, doubts, or reservations about letting go of control.</li>
+                            <li><span class="highlight">Developing Trust:</span> Asks about experiences of trusting others, the fellowship, or a Higher Power, and how trust can grow.</li>
+                            <li><span class="highlight">Acting on Faith:</span> Encourages taking small steps in faith, even when uncertain, and noticing the results.</li>
+                            <li><span class="highlight">Personal Experience:</span> Invites members to share times when turning things over led to positive outcomes or relief.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">The guides help make Step Three an ongoing, practical commitment—one that deepens with experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card key-themes-card mt-8">
+                <div class="card-header key-themes-header">
+                    <h3 class="text-2xl font-semibold text-center">Key Themes & Synthesis of Step Three</h3>
+                </div>
+                <div class="card-content">
+                    <p class="mb-4 text-lg">Step Three is the step of decision, surrender, and trust. Key themes include:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">1. Surrender and Trust</h4>
+                            <p>Step Three is about surrendering self-will and learning to trust a Power greater than ourselves, the NA program, and the process of recovery.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">2. Action and Decision</h4>
+                            <p>Making a decision is only the beginning—real change comes from putting that decision into action by working the steps and living the principles.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">3. Freedom from Fear</h4>
+                            <p>Letting go of control brings relief from fear, anxiety, and the burden of trying to manage everything alone.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">4. Personal Spiritual Path</h4>
+                            <p>Each member's relationship with a Higher Power is unique and respected. Step Three encourages exploration and growth.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">5. Letting Go of Outcomes</h4>
+                            <p>Step Three is about focusing on doing the next right thing, rather than trying to control results.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">6. Ongoing Process</h4>
+                            <p>Turning our will and lives over is not a one-time event, but an ongoing process that deepens as we continue in recovery.</p>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-center text-lg font-medium text-sky-800">
+                        Step Three is the turning point where we begin to live by spiritual principles, trusting that we are cared for and guided in our recovery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container-mx-auto">
+            <div class="mb-6">
+              <h3 class="text-xl font-semibold text-sky-800 mb-3">Literature & Resources</h3>
+              <ul class="list-none space-y-2 text-gray-600">
+                <li><a href="assets/basic-text-sixth-edition.pdf" target="_blank">Basic Text of Narcotics Anonymous (Sixth Edition)</a></li>
+                <li><a href="assets/it-works-how-and-why.pdf" target="_blank">It Works How and Why</a></li>
+                <li><a href="assets/step-working-guide.pdf" target="_blank">The NA Step Working Guides</a></li>
+                <li><a href="assets/just-for-today.pdf" target="_blank">Just For Today (Full PDF)</a></li>
+              </ul>
+            </div>
+            <p>&copy; <span id="currentYear"></span> NA Information Website. Content adapted from NA Fellowship-approved literature.</p>
+            <p>Narcotics Anonymous, NA, and the NA Way are registered trademarks of Narcotics Anonymous World Services, Inc.</p>
+        </div>
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        // Footer Year & Navbar JS
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+        const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                if(mobileMenuIconOpen && mobileMenuIconClose){
+                    mobileMenuIconOpen.classList.toggle('hidden');
+                    mobileMenuIconClose.classList.toggle('hidden');
+                }
+            });
+        }
 
+        const mobileStepsButton = document.getElementById('mobile-steps-button');
+        const mobileStepsDropdown = document.getElementById('mobile-steps-dropdown');
+        if (mobileStepsButton && mobileStepsDropdown) {
+            mobileStepsButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                mobileStepsDropdown.classList.toggle('hidden');
+            });
+        }
+
+        // Steps Data for nav dropdowns
+        const stepsData = [
+          { id: 1, title: "Step One" }, { id: 2, title: "Step Two" }, { id: 3, title: "Step Three" },
+          { id: 4, title: "Step Four" }, { id: 5, title: "Step Five" }, { id: 6, title: "Step Six" },
+          { id: 7, title: "Step Seven" }, { id: 8, title: "Step Eight" }, { id: 9, title: "Step Nine" },
+          { id: 10, title: "Step Ten" }, { id: 11, title: "Step Eleven" }, { id: 12, title: "Step Twelve" }
+        ];
+
+        // Populate step links in navbar dropdowns
+        const desktopDropdown = document.querySelector('.nav-dropdown-content');
+        const mobileDropdownContainerForNav = document.getElementById('mobile-steps-dropdown');
+        const currentPathForNav = window.location.pathname.split('/').pop() || 'index.html';
+
+        if (desktopDropdown) {
+            desktopDropdown.innerHTML = ''; 
+            stepsData.forEach(step => {
+                const link = document.createElement('a');
+                link.href = `step${step.id}.html`;
+                link.textContent = step.title;
+                if (`step${step.id}.html` === currentPathForNav) {
+                    link.classList.add('navbar-link-active'); 
+                }
+                desktopDropdown.appendChild(link);
+            });
+        }
+
+        if (mobileDropdownContainerForNav) {
+            mobileDropdownContainerForNav.innerHTML = ''; 
+            stepsData.forEach(step => {
+                const link = document.createElement('a');
+                link.href = `step${step.id}.html`;
+                link.textContent = step.title;
+                link.className = 'navbar-mobile-link block';
+                 if (`step${step.id}.html` === currentPathForNav) {
+                    link.classList.add('navbar-mobile-link-active'); 
+                }
+                mobileDropdownContainerForNav.appendChild(link);
+            });
+        }
+        
+        // General Nav Link Active State
+        const navLinks = document.querySelectorAll('.navbar-link, .navbar-mobile-link');
+        navLinks.forEach(link => {
+            const linkPath = (link.getAttribute('href') || '').split('/').pop();
+            if (!link.closest('.nav-dropdown-content') && !link.closest('#mobile-steps-dropdown')) {
+                 if (linkPath === currentPathForNav && linkPath !== '') { 
+                    link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+                 } else if ((currentPathForNav === 'index.html' || currentPathForNav === '') && linkPath === 'index.html') {
+                    link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+                 } else {
+                     link.classList.remove('navbar-link-active', 'navbar-mobile-link-active');
+                 }
+            }
+        });
+        
+        if (currentPathForNav.startsWith('step') && currentPathForNav.endsWith('.html')) {
+            document.querySelectorAll('.navbar-link, .navbar-mobile-link').forEach(parentLink => {
+                const desktopDropdownButton = parentLink.closest('.nav-dropdown')?.querySelector('button.navbar-link');
+                if(desktopDropdownButton && desktopDropdownButton.textContent.includes('The 12 Steps')) {
+                    desktopDropdownButton.classList.add('navbar-link-active');
+                }
+                const mobileDropdownButton = parentLink.closest('.nav-dropdown-mobile')?.querySelector('button.navbar-mobile-link');
+                 if(mobileDropdownButton && mobileDropdownButton.textContent.includes('The 12 Steps')) {
+                    mobileDropdownButton.classList.add('navbar-mobile-link-active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

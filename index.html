@@ -1,33 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>NA 12 Steps Resource</title>
-  <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Narcotics Anonymous Information Website. Find resources, information about NA, the 12 Steps, and daily meditations.">
+    <meta name="keywords" content="Narcotics Anonymous, NA, 12 Steps, recovery, addiction, support, JFT, Just For Today, hope">
+    <title>NA Information Hub - Hope and Recovery</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
-  <h1>Narcotics Anonymous 12 Steps Resource</h1>
-  <nav>
-    <ul>
-      <li><a href="it-works-how-and-why.html">It Works: How and Why (Full Book)</a></li>
-      <li><a href="step-working-guide.html">Step Working Guide (Full Book)</a></li>
-      <li><a href="basic-text-sixth-edition.html">Basic Text Sixth Edition (Full Book)</a></li>
-      <li><a href="step1.html">Step 1</a></li>
-      <li><a href="step2.html">Step 2</a></li>
-      <li><a href="step3.html">Step 3</a></li>
-      <li><a href="step4.html">Step 4</a></li>
-      <li><a href="step5.html">Step 5</a></li>
-      <li><a href="step6.html">Step 6</a></li>
-      <li><a href="step7.html">Step 7</a></li>
-      <li><a href="step8.html">Step 8</a></li>
-      <li><a href="step9.html">Step 9</a></li>
-      <li><a href="step10.html">Step 10</a></li>
-      <li><a href="step11.html">Step 11</a></li>
-      <li><a href="step12.html">Step 12</a></li>
-    </ul>
-  </nav>
-  <p>
-    Welcome to the NA 12 Steps Resource. This website provides downloadable and viewable NA literature and in-depth guidance for each of the 12 steps.
-  </p>
+<body class="bg-gradient-to-br from-sky-50 to-indigo-100">
+
+    <!-- Navbar -->
+    <nav class="navbar-bg">
+        <div class="navbar-container">
+            <div class="navbar-flex-container">
+                <div class="navbar-logo-flex">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg class="navbar-logo-svg" fill="none" viewBox="0 0 100 100" stroke="currentColor">
+                          <circle cx="50" cy="50" r="40" stroke-width="5" />
+                          <rect x="30" y="30" width="40" height="40" stroke-width="5" transform="rotate(45 50 50)" />
+                          <text x="50" y="55" text-anchor="middle" font-size="20" font-weight="bold" fill="white">NA</text>
+                        </svg>
+                        <span class="navbar-logo-text">NA Website</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="navbar-links-flex">
+                        <a href="index.html" class="navbar-link navbar-link-active">Home</a>
+                        <a href="whatIsNA.html" class="navbar-link">What is NA?</a>
+                        <div class="nav-dropdown">
+                            <button class="navbar-link flex items-center">
+                                The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div class="nav-dropdown-content nav-dropdown-max-height">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                        <a href="traditions.html" class="navbar-link">The 12 Traditions</a>
+                        <a href="recoveryRelapse.html" class="navbar-link">Recovery & Relapse</a>
+                        <a href="jft.html" class="navbar-link">Just For Today</a>
+                    </div>
+                </div>
+                <div class="md:hidden -mr-2 flex">
+                    <button type="button" class="navbar-mobile-menu-button-styles" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="navbar-mobile-menu-icon" id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg class="navbar-mobile-menu-icon hidden" id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="navbar-mobile-menu-links-container">
+                <a href="index.html" class="navbar-mobile-link navbar-mobile-link-active">Home</a>
+                <a href="whatIsNA.html" class="navbar-mobile-link">What is NA?</a>
+                <div class="nav-dropdown-mobile">
+                    <button class="navbar-mobile-link w-full text-left flex justify-between items-center" id="mobile-steps-button">
+                        The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div class="pl-4 hidden" id="mobile-steps-dropdown">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+                <a href="traditions.html" class="navbar-mobile-link">The 12 Traditions</a>
+                <a href="recoveryRelapse.html" class="navbar-mobile-link">Recovery & Relapse</a>
+                <a href="jft.html" class="navbar-mobile-link">Just For Today</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="animate-fadeIn">
+        <div class="p-6 md:p-10"> <!-- Removed min-h-[calc(100vh-5rem)] to be part of body/main style if needed -->
+            <header class="text-center mb-12">
+              <h1 class="text-5xl font-bold text-sky-700 mb-4">Welcome to Narcotics Anonymous</h1>
+              <p class="text-xl text-gray-600">A Journey of Hope and Recovery</p>
+            </header>
+        
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-2xl">
+              <section class="mb-8 prose"> <!-- Added prose class for default styling -->
+                <h2 class="text-3xl font-semibold text-sky-800 mb-4">What is NA?</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Narcotics Anonymous is a global, community-based organization with a multilingual and multicultural membership. NA was founded in 1953, and our membership growth was minimal during our initial twenty years as an organization. Since the publication of our Basic Text in 1983, the number of members and meetings has increased dramatically.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Today, NA members hold nearly 67,000 meetings weekly in 139 countries. We offer recovery from the effects of addiction through working a twelve-step program, including regular attendance at group meetings. The group atmosphere provides help from peers and offers an ongoing support network for addicts who wish to pursue and maintain a drug-free lifestyle.
+                </p>
+              </section>
+        
+              <section class="mb-8 prose">
+                <h2 class="text-3xl font-semibold text-sky-800 mb-4">Our Message</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  The message of Narcotics Anonymous is simple: An addict, any addict, can stop using drugs, lose the desire to use, and find a new way to live. Our message is one of hope and the promise of freedom from active addiction.
+                </p>
+                <a href="whatIsNA.html"
+                  class="inline-block bg-sky-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-sky-700 transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 no-underline"
+                > 
+                  Learn More About NA
+                </a> <!-- Added no-underline for button-like links -->
+              </section>
+        
+              <section>
+                <h2 class="text-3xl font-semibold text-sky-800 mb-6">Explore the 12 Steps</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="steps-preview-container">
+                  <!-- Steps preview will be populated by JavaScript -->
+                </div>
+                <div class="text-center mt-8">
+                  <a href="step1.html" <!-- Changed to a link to step1.html -->
+                    class="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 no-underline"
+                  >
+                    View All 12 Steps
+                  </a>
+                </div>
+              </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container-mx-auto">
+            <div class="mb-6">
+              <h3 class="text-xl font-semibold text-sky-800 mb-3">Literature & Resources</h3>
+              <ul class="list-none space-y-2 text-gray-600">
+                <li><a href="assets/basic-text-sixth-edition.pdf" target="_blank">Basic Text of Narcotics Anonymous (Sixth Edition)</a></li>
+                <li><a href="assets/it-works-how-and-why.pdf" target="_blank">It Works How and Why</a></li>
+                <li><a href="assets/step-working-guide.pdf" target="_blank">The NA Step Working Guides</a></li>
+                <li><a href="assets/just-for-today.pdf" target="_blank">Just For Today (Full PDF)</a></li>
+              </ul>
+            </div>
+            <p>&copy; <span id="currentYear"></span> NA Information Website. Content adapted from NA Fellowship-approved literature.</p>
+            <p>Narcotics Anonymous, NA, and the NA Way are registered trademarks of Narcotics Anonymous World Services, Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Footer Year & Navbar JS from Step 1 (assumed to be here)
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+        const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuIconOpen.classList.toggle('hidden');
+            mobileMenuIconClose.classList.toggle('hidden');
+        });
+        const mobileStepsButton = document.getElementById('mobile-steps-button');
+        const mobileStepsDropdown = document.getElementById('mobile-steps-dropdown');
+        if (mobileStepsButton && mobileStepsDropdown) {
+            mobileStepsButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                mobileStepsDropdown.classList.toggle('hidden');
+                const icon = mobileStepsButton.querySelector('svg');
+                if (icon) { /* icon.classList.toggle('rotate-180'); */ } // Optional: icon rotation
+            });
+        }
+        const navLinks = document.querySelectorAll('.navbar-link, .navbar-mobile-link');
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (linkPath === currentPath) {
+                link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+            }
+             if ((currentPath === 'index.html' || currentPath === '') && linkPath === 'index.html') {
+                link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+            }
+        });
+
+        // Steps Data for preview and nav dropdowns
+        const stepsData = [
+          { id: 1, title: "Step One", text: "We admitted that we were powerless over our addiction, that our lives had become unmanageable.", summary: "This step is about honesty and acceptance..." },
+          { id: 2, title: "Step Two", text: "We came to believe that a Power greater than ourselves could restore us to sanity.", summary: "Step Two introduces hope..." },
+          { id: 3, title: "Step Three", text: "We made a decision to turn our will and our lives over to the care of God as we understood Him.", summary: "This step is about making a decision..." },
+          { id: 4, title: "Step Four", text: "We made a searching and fearless moral inventory of ourselves.", summary: "Step Four is a process of self-examination..." },
+          { id: 5, title: "Step Five", text: "We admitted to God, to ourselves, and to another human being the exact nature of our wrongs.", summary: "Following the self-inventory..." },
+          { id: 6, title: "Step Six", text: "We were entirely ready to have God remove all these defects of character.", summary: "Step Six is about becoming willing..." },
+          { id: 7, title: "Step Seven", text: "We humbly asked Him to remove our shortcomings.", summary: "This step involves actively asking..." },
+          { id: 8, title: "Step Eight", text: "We made a list of all persons we had harmed and became willing to make amends to them all.", summary: "Step Eight begins the process..." },
+          { id: 9, title: "Step Nine", text: "We made direct amends to such people wherever possible, except when to do so would injure them or others.", summary: "Step Nine is about taking action..." },
+          { id: 10, title: "Step Ten", text: "We continued to take personal inventory and when we were wrong promptly admitted it.", summary: "Step Ten is about maintaining recovery..." },
+          { id: 11, title: "Step Eleven", text: "We sought through prayer and meditation to improve our conscious contact with God as we understood Him, praying only for knowledge of His will for us and the power to carry that out.", summary: "This step focuses on deepening..." },
+          { id: 12, title: "Step Twelve", text: "Having had a spiritual awakening as a result of these steps, we tried to carry this message to addicts and to practice these principles in all our affairs.", summary: "Step Twelve is about giving back..." }
+        ];
+
+        // Populate Steps Preview on Homepage
+        const stepsPreviewContainer = document.getElementById('steps-preview-container');
+        if (stepsPreviewContainer) {
+            stepsData.slice(0, 6).forEach(step => {
+                const stepDiv = document.createElement('div');
+                stepDiv.className = 'bg-sky-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300';
+                stepDiv.innerHTML = `
+                  <h3 class="text-xl font-semibold text-sky-700 mb-2">${step.title}</h3>
+                  <p class="text-gray-600 text-sm mb-3 line-clamp-3">${step.text}</p>
+                  <a href="step${step.id}.html" class="text-sky-600 hover:text-sky-800 font-medium transition duration-300 no-underline">
+                    Read More &rarr;
+                  </a>
+                `;
+                stepsPreviewContainer.appendChild(stepDiv);
+            });
+        }
+
+        // Populate step links in navbar dropdowns
+        const desktopDropdown = document.querySelector('.nav-dropdown-content');
+        const mobileDropdownContainerForNav = document.getElementById('mobile-steps-dropdown');
+
+        if (desktopDropdown) {
+            desktopDropdown.innerHTML = ''; // Clear existing before adding
+            stepsData.forEach(step => {
+                const link = document.createElement('a');
+                link.href = `step${step.id}.html`;
+                link.textContent = step.title;
+                desktopDropdown.appendChild(link);
+            });
+        }
+
+        if (mobileDropdownContainerForNav) {
+            mobileDropdownContainerForNav.innerHTML = ''; // Clear existing
+            stepsData.forEach(step => {
+                const link = document.createElement('a');
+                link.href = `step${step.id}.html`;
+                link.textContent = step.title;
+                link.className = 'navbar-mobile-link block';
+                mobileDropdownContainerForNav.appendChild(link);
+            });
+        }
+    </script>
 </body>
 </html>

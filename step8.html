@@ -3,179 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NA Step 8: Detailed Visual Breakdown</title>
+    <title>Step 8 - Narcotics Anonymous</title>
+    <meta name="description" content="Exploring Step 8 of Narcotics Anonymous: We made a list of all persons we had harmed and became willing to make amends to them all. Preparing for reconciliation.">
+    <meta name="keywords" content="NA, Narcotics Anonymous, Step 8, amends list, willingness, responsibility, relationships, recovery">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #e0f2fe;
-        }
-        .container-fluid {
-            padding: 1rem;
-        }
-        @media (min-width: 640px) {
-            .container-fluid {
-                padding: 2rem;
-            }
-        }
-        .main-title {
-            color: #0c4a6e;
-            margin-bottom: 2rem;
-        }
-        .step-box {
-            background-color: #0ea5e9;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .card {
-            background-color: #ffffff;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-        }
-        .card-header {
-            background-color: #7dd3fc;
-            color: #0c4a6e;
-            padding: 1rem 1.5rem;
-            border-bottom: 1px solid #bae6fd;
-        }
-        .card-content {
-            padding: 1.5rem;
-            color: #374151;
-        }
-        .highlight {
-            color: #0369a1;
-            font-weight: 600;
-        }
-        .emphasis {
-            font-style: italic;
-            color: #0ea5e9;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
-        .key-themes-card {
-            background-color: #f0f9ff;
-            border: 2px solid #7dd3fc;
-        }
-        .key-themes-header {
-            background-color: #38bdf8;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body class="container-fluid">
+<body class="step-page-background">
 
-    <header class="text-center my-8">
-        <h1 class="main-title text-3xl sm:text-4xl md:text-5xl font-bold">
-            A Deep Dive into Step Eight of Narcotics Anonymous
-        </h1>
-    </header>
-
-    <div class="step-box">
-        <h2 class="text-2xl sm:text-3xl font-semibold">Step Eight: "Made a list of all persons we had harmed, and became willing to make amends to them all."</h2>
-    </div>
-
-    <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from the Basic Text</h3>
+    <!-- Navbar -->
+    <nav class="navbar-bg">
+        <div class="navbar-container">
+            <div class="navbar-flex-container">
+                <div class="navbar-logo-flex">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg class="navbar-logo-svg" fill="none" viewBox="0 0 100 100" stroke="currentColor">
+                          <circle cx="50" cy="50" r="40" stroke-width="5" />
+                          <rect x="30" y="30" width="40" height="40" stroke-width="5" transform="rotate(45 50 50)" />
+                          <text x="50" y="55" text-anchor="middle" font-size="20" font-weight="bold" fill="white">NA</text>
+                        </svg>
+                        <span class="navbar-logo-text">NA Website</span>
+                    </a>
                 </div>
-                <div class="card-content">
-                    <!-- REPLACE THIS SECTION WITH YOUR STEP 8 BASIC TEXT CONTENT -->
-                    <p class="mb-3">The Basic Text describes Step Eight as a process of inventory and willingness, preparing for the amends of Step Nine.</p>
-                    <ul>
-                        <li><span class="highlight">Making a List:</span> We identify all persons we have harmed, directly or indirectly, through our addiction and related behaviors.</li>
-                        <li><span class="highlight">Becoming Willing:</span> Willingness is emphasized—being ready to make amends, even if we have reservations or fear about doing so.</li>
-                        <li><span class="highlight">Honesty and Thoroughness:</span> The list should be as complete and honest as possible, including people we may not want to face.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">The Basic Text frames Step Eight as a necessary preparation for the healing process of making amends.</p>
+                <div class="hidden md:block">
+                    <div class="navbar-links-flex">
+                        <a href="index.html" class="navbar-link">Home</a>
+                        <a href="whatIsNA.html" class="navbar-link">What is NA?</a>
+                        <div class="nav-dropdown">
+                            <button class="navbar-link flex items-center navbar-link-active"> <!-- Active state for 12 Steps parent -->
+                                The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div class="nav-dropdown-content nav-dropdown-max-height">
+                                <!-- Populated by JS, stepX.html link will be styled as active by JS -->
+                            </div>
+                        </div>
+                        <a href="traditions.html" class="navbar-link">The 12 Traditions</a>
+                        <a href="recoveryRelapse.html" class="navbar-link">Recovery & Relapse</a>
+                        <a href="jft.html" class="navbar-link">Just For Today</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from "It Works: How and Why"</h3>
-                </div>
-                <div class="card-content">
-                    <!-- REPLACE THIS SECTION WITH YOUR STEP 8 "IT WORKS: HOW AND WHY" CONTENT -->
-                    <p class="mb-3">"It Works: How and Why" explores the spiritual and emotional aspects of Step Eight.</p>
-                    <ul>
-                        <li><span class="highlight">The Nature of Willingness:</span> Willingness is a spiritual principle that grows as we work the program.</li>
-                        <li><span class="highlight">Facing Our Past:</span> Making a list of those we have harmed can be challenging, but it is essential for our growth and freedom.</li>
-                        <li><span class="highlight">Healing Relationships:</span> The process of becoming willing to make amends is a step toward healing relationships and ourselves.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">This text highlights that Step Eight is about readiness for change and reconciliation.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from the Step Working Guides</h3>
-                </div>
-                <div class="card-content">
-                    <!-- REPLACE THIS SECTION WITH YOUR STEP 8 STEP WORKING GUIDES CONTENT -->
-                    <p class="mb-3">The Step Working Guides provide practical exercises for working Step Eight.</p>
-                    <ul>
-                        <li><span class="highlight">Listing Harmed Persons:</span> Guides offer questions to help identify all affected parties, including ourselves.</li>
-                        <li><span class="highlight">Exploring Willingness:</span> Prompts are given to reflect on what willingness means and how to cultivate it.</li>
-                        <li><span class="highlight">Preparing for Amends:</span> The guide encourages us to write down our list and to be thorough and honest.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">The guides make Step Eight a deeply personal and introspective process.</p>
+                <div class="md:hidden -mr-2 flex">
+                    <button type="button" class="navbar-mobile-menu-button-styles" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="navbar-mobile-menu-icon" id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg class="navbar-mobile-menu-icon hidden" id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
                 </div>
             </div>
         </div>
-
-        <div class="card key-themes-card mt-8">
-            <div class="card-header key-themes-header">
-                <h3 class="text-2xl font-semibold text-center">Key Themes & Synthesis of Step Eight</h3>
-            </div>
-            <div class="card-content">
-                <p class="mb-4 text-lg">Step Eight is a process of inventory and willingness, preparing us for the amends of Step Nine. Key themes include:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">1. Honesty in Listing</h4>
-                        <p>We are called to be <span class="highlight">honest and thorough</span> in identifying all persons we have harmed, including those we may not want to face.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">2. The Importance of Willingness</h4>
-                        <p><span class="highlight">Willingness</span> is the spiritual foundation of Step Eight, preparing us for the action of amends in Step Nine.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">3. Preparation for Healing</h4>
-                        <p>Step Eight is a <span class="highlight">preparation for healing</span>—both for ourselves and for our relationships.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">4. Courage and Humility</h4>
-                        <p>Making a list and becoming willing requires <span class="highlight">courage and humility</span>, as we face the consequences of our past actions.</p>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="navbar-mobile-menu-links-container">
+                <a href="index.html" class="navbar-mobile-link">Home</a>
+                <a href="whatIsNA.html" class="navbar-mobile-link">What is NA?</a>
+                <div class="nav-dropdown-mobile">
+                    <button class="navbar-mobile-link w-full text-left flex justify-between items-center navbar-mobile-link-active" id="mobile-steps-button"> <!-- Active state for 12 Steps parent -->
+                        The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div class="pl-4 hidden" id="mobile-steps-dropdown">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
-                <p class="mt-6 text-center text-lg font-medium text-sky-800">
-                    Step Eight is about readiness for change and reconciliation, setting the stage for the healing process of Step Nine.
-                </p>
+                <a href="traditions.html" class="navbar-mobile-link">The 12 Traditions</a>
+                <a href="recoveryRelapse.html" class="navbar-mobile-link">Recovery & Relapse</a>
+                <a href="jft.html" class="navbar-mobile-link">Just For Today</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <a href="index.html" style="display: block; text-align: center; margin-top: 2rem;">← Back to Home</a>
-    <footer class="mt-12 text-center text-sm text-sky-700 py-6">
-        <p>&copy; <span id="year"></span> NA Step Eight Breakdown. For informational and reflective purposes.</p>
+    <main class="animate-fadeIn container-mx-auto py-8">
+        <header class="text-center my-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-sky-700 mb-8">
+                A Deep Dive into Step Eight of Narcotics Anonymous
+            </h1>
+        </header>
+
+        <div class="bg-sky-500 text-white p-6 rounded-lg mb-8 text-center shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-semibold">Step Eight: "Made a list of all persons we had harmed, and became willing to make amends to them all."</h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from the Basic Text</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">The Basic Text emphasizes Step Eight as a crucial stage of identifying past wrongs and cultivating the willingness to address them.</p>
+                        <ul>
+                            <li><span class="highlight">Comprehensive List:</span> We are encouraged to list all individuals, institutions, or entities we harmed through our active addiction. This includes emotional, physical, financial, and spiritual harm.</li>
+                            <li><span class="highlight">Identifying Harms:</span> The process involves looking beyond obvious harms to more subtle ways our actions affected others. This may require reflection on our Fourth Step inventory.</li>
+                            <li><span class="highlight">The Role of Willingness:</span> "Became willing" is a key part of this step. Willingness may not come easily; it often grows through working the previous steps and through prayer and discussion with a sponsor.</li>
+                            <li><span class="highlight">No Exceptions at the Listing Stage:</span> The list should be made without prejudging whether amends are possible or how they will be received. The focus is on our part in the harm.</li>
+                            <li><span class="highlight">Self-Harm:</span> It's often suggested to include ourselves on this list, recognizing the harm we've done to our own bodies, minds, and spirits.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">The Basic Text frames Step Eight as an honest accounting that paves the way for true reconciliation and self-forgiveness.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from "It Works: How and Why"</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">"It Works: How and Why" explores the spiritual principles underlying Step Eight, particularly courage and humility.</p>
+                        <ul>
+                            <li><span class="highlight">Facing Ourselves:</span> Making the list requires courage to face the consequences of our past actions and the parts of ourselves we may not like.</li>
+                            <li><span class="highlight">Developing Humility:</span> Recognizing the extent of the harm we caused fosters humility and helps break down denial and self-centeredness.</li>
+                            <li><span class="highlight">The Process of Becoming Willing:</span> Willingness is presented as a spiritual state that can be prayed for and cultivated. It's an opening of the heart to the possibility of making things right.</li>
+                            <li><span class="highlight">Freedom from the Past:</span> This step is vital for freeing ourselves from the bondage of past resentments, guilt, and shame, which can be triggers for relapse.</li>
+                            <li><span class="highlight">Guidance from Sponsor/Higher Power:</span> The importance of seeking guidance from a sponsor and one's Higher Power in making the list and cultivating willingness is stressed.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">This text emphasizes that Step Eight is not just about listing names, but about a profound internal shift towards accountability and readiness for healing.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from the Step Working Guides</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">The Step Working Guides offer practical questions and exercises to thoroughly work Step Eight.</p>
+                        <ul>
+                            <li><span class="highlight">Systematic Listing:</span> Guides often suggest categories (family, friends, employers, oneself, etc.) to ensure the list is comprehensive.</li>
+                            <li><span class="highlight">Defining "Harm":</span> Questions help explore different types of harm – financial, emotional, physical, reputational, spiritual – to ensure a broad understanding.</li>
+                            <li><span class="highlight">Overcoming Reluctance:</span> Prompts to address fears or reluctance about listing certain people or harms, and about becoming willing to make amends.</li>
+                            <li><span class="highlight">The Role of the Fourth Step:</span> Encouragement to review the Fourth Step inventory for names and situations that belong on the Eighth Step list.</li>
+                            <li><span class="highlight">Journaling and Reflection:</span> Writing about the harms and the process of becoming willing can deepen the experience of this step.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">The guides aim to make Step Eight a meticulous and heartfelt preparation for the actions of Step Nine.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card key-themes-card mt-8">
+                <div class="card-header key-themes-header">
+                    <h3 class="text-2xl font-semibold text-center">Key Themes & Synthesis of Step Eight</h3>
+                </div>
+                <div class="card-content">
+                    <p class="mb-4 text-lg">Step Eight is about courageously facing the past and cultivating a sincere willingness to heal the wounds we've inflicted. Key themes include:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">1. Unflinching Honesty</h4>
+                            <p>The cornerstone of Step Eight is <span class="highlight">rigorous honesty</span> in identifying everyone we have harmed, without minimizing or justifying our actions. This includes ourselves.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">2. The Growth of Willingness</h4>
+                            <p>Willingness is not a prerequisite for starting the list, but rather a <span class="highlight">spiritual state that develops</span> as we engage with the step, often through prayer and guidance.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">3. Accountability and Responsibility</h4>
+                            <p>This step helps us take full responsibility for our past behavior, moving away from blaming others or circumstances for the harm we caused.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">4. Preparation for Action</h4>
+                            <p>Making the list and becoming willing are essential <span class="highlight">preparatory actions</span> that lay the groundwork for the direct amends made in Step Nine.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">5. Freedom and Healing</h4>
+                            <p>While challenging, Step Eight is a pathway to <span class="highlight">freedom from guilt and remorse</span>, and it opens the door to healing damaged relationships, including the one with ourselves.</p>
+                        </div>
+                         <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">6. Humility and Courage</h4>
+                            <p>It takes <span class="highlight">humility to admit our wrongs</span> and <span class="highlight">courage to become willing</span> to face those we've harmed. These virtues are central to this step.</p>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-center text-lg font-medium text-sky-800">
+                        Step Eight is a critical turning point where we shift from introspection to preparing for interpersonal repair, guided by honesty and a growing willingness.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container-mx-auto">
+            <div class="mb-6">
+              <h3 class="text-xl font-semibold text-sky-800 mb-3">Literature & Resources</h3>
+              <ul class="list-none space-y-2 text-gray-600">
+                <li><a href="assets/basic-text-sixth-edition.pdf" target="_blank">Basic Text of Narcotics Anonymous (Sixth Edition)</a></li>
+                <li><a href="assets/it-works-how-and-why.pdf" target="_blank">It Works How and Why</a></li>
+                <li><a href="assets/step-working-guide.pdf" target="_blank">The NA Step Working Guides</a></li>
+                <li><a href="assets/just-for-today.pdf" target="_blank">Just For Today (Full PDF)</a></li>
+              </ul>
+            </div>
+            <p>&copy; <span id="currentYear"></span> NA Information Website. Content adapted from NA Fellowship-approved literature.</p>
+            <p>Narcotics Anonymous, NA, and the NA Way are registered trademarks of Narcotics Anonymous World Services, Inc.</p>
+        </div>
     </footer>
+
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Footer Year & Navbar JS
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+        const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                if(mobileMenuIconOpen && mobileMenuIconClose){
+                    mobileMenuIconOpen.classList.toggle('hidden');
+                    mobileMenuIconClose.classList.toggle('hidden');
+                }
+            });
+        }
+
+        const mobileStepsButton = document.getElementById('mobile-steps-button');
+        const mobileStepsDropdown = document.getElementById('mobile-steps-dropdown');
+        if (mobileStepsButton && mobileStepsDropdown) {
+            mobileStepsButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                mobileStepsDropdown.classList.toggle('hidden');
+            });
+        }
+
+        // Steps Data for nav dropdowns
+        const stepsData = [
+          { id: 1, title: "Step One" }, { id: 2, title: "Step Two" }, { id: 3, title: "Step Three" },
+          { id: 4, title: "Step Four" }, { id: 5, title: "Step Five" }, { id: 6, title: "Step Six" },
+          { id: 7, title: "Step Seven" }, { id: 8, title: "Step Eight" }, { id: 9, title: "Step Nine" },
+          { id: 10, title: "Step Ten" }, { id: 11, title: "Step Eleven" }, { id: 12, title: "Step Twelve" }
+        ];
+
+        // Populate step links in navbar dropdowns
+        const desktopDropdown = document.querySelector('.nav-dropdown-content');
+        const mobileDropdownContainerForNav = document.getElementById('mobile-steps-dropdown');
+        const currentPathForNav = window.location.pathname.split('/').pop() || 'index.html';
+
+        if (desktopDropdown) {
+            desktopDropdown.innerHTML = ''; 
+            stepsData.forEach(step => {
+                const link = document.createElement('a');
+                link.href = `step${step.id}.html`;
+                link.textContent = step.title;
+                if (`step${step.id}.html` === currentPathForNav) {
+                    link.classList.add('navbar-link-active'); 
+                }
+                desktopDropdown.appendChild(link);
+            });
+        }
+
+        if (mobileDropdownContainerForNav) {
+            mobileDropdownContainerForNav.innerHTML = ''; 
+            stepsData.forEach(step => {
+                const link = document.createElement('a');
+                link.href = `step${step.id}.html`;
+                link.textContent = step.title;
+                link.className = 'navbar-mobile-link block';
+                 if (`step${step.id}.html` === currentPathForNav) {
+                    link.classList.add('navbar-mobile-link-active'); 
+                }
+                mobileDropdownContainerForNav.appendChild(link);
+            });
+        }
+        
+        // General Nav Link Active State
+        const navLinks = document.querySelectorAll('.navbar-link, .navbar-mobile-link');
+        navLinks.forEach(link => {
+            const linkPath = (link.getAttribute('href') || '').split('/').pop();
+            if (!link.closest('.nav-dropdown-content') && !link.closest('#mobile-steps-dropdown')) {
+                 if (linkPath === currentPathForNav && linkPath !== '') { 
+                    link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+                 } else if ((currentPathForNav === 'index.html' || currentPathForNav === '') && linkPath === 'index.html') {
+                    link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+                 } else {
+                     link.classList.remove('navbar-link-active', 'navbar-mobile-link-active');
+                 }
+            }
+        });
+        
+        if (currentPathForNav.startsWith('step') && currentPathForNav.endsWith('.html')) {
+            document.querySelectorAll('.navbar-link, .navbar-mobile-link').forEach(parentLink => {
+                const desktopDropdownButton = parentLink.closest('.nav-dropdown')?.querySelector('button.navbar-link');
+                if(desktopDropdownButton && desktopDropdownButton.textContent.includes('The 12 Steps')) {
+                    desktopDropdownButton.classList.add('navbar-link-active');
+                }
+                const mobileDropdownButton = parentLink.closest('.nav-dropdown-mobile')?.querySelector('button.navbar-mobile-link');
+                 if(mobileDropdownButton && mobileDropdownButton.textContent.includes('The 12 Steps')) {
+                    mobileDropdownButton.classList.add('navbar-mobile-link-active');
+                }
+            });
+        }
     </script>
 </body>
 </html>

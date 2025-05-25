@@ -1,0 +1,398 @@
+/* General Body Styles & Animations */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f9ff; /* Default light blue background for general pages */
+  color: #374151; /* Default text color: Gray 700 */
+  line-height: 1.6;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Common Container Style */
+.container-mx-auto {
+  max-width: 72rem; /* Equivalent to max-w-6xl in Tailwind */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;  /* px-4 */
+  padding-right: 1rem; /* px-4 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+  .container-mx-auto {
+    padding-left: 1.5rem; /* sm:px-6 */
+    padding-right: 1.5rem; /* sm:px-6 */
+  }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .container-mx-auto {
+    padding-left: 2rem; /* lg:px-8 */
+    padding-right: 2rem; /* lg:px-8 */
+  }
+}
+
+
+/* Card Styles - for Steps and potentially other content */
+.card {
+    background-color: #ffffff;
+    border-radius: 0.75rem; /* 12px */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem; /* 24px */
+    overflow: hidden; /* To contain border radius of header */
+}
+
+.card-header {
+    background-color: #7dd3fc; /* Lighter sky blue for card headers */
+    color: #0c4a6e; /* Darker sky blue text */
+    padding: 1rem 1.5rem; /* 16px 24px */
+    border-bottom: 1px solid #bae6fd; /* Even lighter border */
+}
+
+.card-header h3 { /* Ensure h3 inside card-header uses the intended color */
+    color: #0c4a6e;
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+}
+
+.card-content {
+    padding: 1.5rem; /* 24px */
+    color: #374151; /* Gray 700 */
+}
+
+.card-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem; /* 24px */
+    margin-top: 0.5rem; /* 8px */
+}
+
+.card-content li {
+    margin-bottom: 0.5rem; /* 8px */
+}
+
+/* Highlight & Emphasis Styles */
+.highlight {
+    color: #0369a1; /* Sky blue 700 */
+    font-weight: 600;
+}
+
+.emphasis {
+    font-style: italic;
+    color: #0ea5e9; /* Sky blue 500 */
+}
+
+/* Key Themes Card Variation (as seen in Step pages) */
+.key-themes-card {
+    background-color: #f0f9ff; /* Very light blue, almost white */
+    border: 2px solid #7dd3fc;
+}
+
+.key-themes-card .card-header { /* This is a .card-header inside .key-themes-card */
+    background-color: #38bdf8 !important; /* Sky blue 400 - !important to ensure override if needed */
+    color: white !important;
+}
+
+.key-themes-card .card-header h3 { /* Ensure text color is white for key themes header */
+     color: white !important;
+}
+
+.key-themes-card .card-content .text-sky-700 { /* Titles within key themes card content */
+    color: #0369a1; /* Sky blue 700, consistent with highlight */
+}
+
+
+/* General Prose Styles (for pages like "What is NA?") */
+.prose h1 { /* Added for general page titles */
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  color: #0c4a6e; /* sky-800 */
+  margin-bottom: 1rem;
+}
+
+.prose h2 { /* Added for general page subtitles */
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 600; /* font-semibold */
+  color: #0c4a6e; /* sky-800 */
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose h3 {
+  font-size: 1.5em; /* 24px */
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  color: #0c4a6e; /* sky-800 */
+}
+
+.prose p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.prose ul { /* General prose unordered list */
+  list-style-type: disc;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.prose ol { /* General prose ordered list */
+  list-style-type: decimal;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.prose a {
+  color: #0ea5e9; /* sky-500 */
+  text-decoration: none;
+}
+.prose a:hover {
+  text-decoration: underline;
+  color: #0369a1; /* sky-700 */
+}
+
+/* Utility class from React App example */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+/* Specific background for Step Pages if different from default */
+.step-page-background {
+    background-color: #e0f2fe; /* Lighter sky blue background as per step1.html example */
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding-top: 2rem; /* py-8 */
+    padding-bottom: 2rem; /* py-8 */
+    margin-top: 3rem; /* mt-12 */
+    color: #6b7280; /* text-gray-500 */
+    font-size: 0.875rem; /* text-sm */
+}
+.footer a {
+    color: #0ea5e9; /* sky-500 */
+}
+.footer a:hover {
+    color: #0369a1; /* sky-700 */
+    text-decoration: underline;
+}
+
+/* Navbar styling - basic structure to be complemented by Tailwind */
+/* These are inspired by the Tailwind classes in the React Navbar */
+.navbar-bg {
+    background-color: #0284c7; /* bg-sky-600 */
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-lg */
+}
+
+.navbar-container {
+    max-width: 80rem; /* max-w-7xl, assuming 1rem = 16px then 1280px/16 = 80rem. Adjust if base font size is different. */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;  /* px-4 */
+    padding-right: 1rem; /* px-4 */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .navbar-container {
+    padding-left: 1.5rem; /* sm:px-6 */
+    padding-right: 1.5rem; /* sm:px-6 */
+  }
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+  .navbar-container {
+    padding-left: 2rem; /* lg:px-8 */
+    padding-right: 2rem; /* lg:px-8 */
+  }
+}
+
+.navbar-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem; /* h-20 */
+}
+
+.navbar-logo-flex {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-text {
+    color: white;
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    letter-spacing: -0.025em; /* tracking-tight */
+    margin-left: 0.5rem; /* space-x-2 (applied to parent of svg and span) */
+}
+.navbar-logo-svg { /* Basic placeholder, actual SVG styling will be inline or specific */
+    height: 2.5rem; /* h-10 */
+    width: 2.5rem;  /* w-10 */
+    color: white;
+}
+
+
+.navbar-links-desktop {
+    /* display: none; md:block */
+}
+@media (min-width: 768px) { /* md breakpoint */
+    .navbar-links-desktop {
+        display: block;
+    }
+    .navbar-links-mobile-menu-button { /* Hide hamburger on desktop */
+        display: none;
+    }
+}
+
+
+.navbar-links-flex {
+    margin-left: 2.5rem; /* ml-10 */
+    display: flex;
+    align-items: baseline;
+    column-gap: 1rem; /* space-x-4 */
+}
+
+.navbar-link {
+    padding: 0.5rem 0.75rem; /* px-3 py-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #e0f2fe; /* text-sky-100 */
+    text-decoration: none;
+}
+.navbar-link:hover {
+    background-color: #0369a1; /* hover:bg-sky-700 */
+    color: white; /* hover:text-white */
+    transition-property: color, background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+.navbar-link-active {
+    background-color: #0c4a6e; /* bg-sky-900 */
+    color: white;
+}
+
+/* Mobile menu button */
+.navbar-links-mobile-menu-button {
+    /* -mr-2 flex md:hidden */
+    margin-right: -0.5rem;
+    display: flex; /* Becomes none at md */
+}
+@media (min-width: 768px) { /* md breakpoint */
+    .navbar-links-mobile-menu-button {
+        display: none;
+    }
+}
+
+
+.navbar-mobile-menu-button-styles {
+    background-color: #075985; /* bg-sky-700 (example, can be adjusted) */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem; /* p-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    color: #e0f2fe; /* text-sky-100 */
+}
+.navbar-mobile-menu-button-styles:hover {
+    color: white;
+    background-color: #0369a1; /* hover:bg-sky-800 (example) */
+}
+.navbar-mobile-menu-button-styles:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    /* Add focus ring styles if needed, e.g. focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-600 focus:ring-white */
+}
+.navbar-mobile-menu-icon {
+    display: block;
+    height: 1.5rem; /* h-6 */
+    width: 1.5rem; /* w-6 */
+}
+
+/* Mobile menu panel */
+.navbar-mobile-menu-panel {
+    /* md:hidden */
+}
+@media (min-width: 768px) { /* md breakpoint */
+    .navbar-mobile-menu-panel {
+        display: none;
+    }
+}
+
+.navbar-mobile-menu-links-container {
+    padding-left: 0.5rem; /* px-2 */
+    padding-top: 0.5rem; /* pt-2 */
+    padding-bottom: 0.75rem; /* pb-3 */
+    /* space-y-1: direct children will have margin-top */
+}
+.navbar-mobile-menu-links-container > * + * {
+    margin-top: 0.25rem;
+}
+
+.navbar-mobile-link { /* Similar to .navbar-link but block display */
+    display: block;
+    padding: 0.5rem 0.75rem; /* px-3 py-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #e0f2fe; /* text-sky-100 */
+    text-decoration: none;
+}
+.navbar-mobile-link:hover {
+    background-color: #0369a1; /* hover:bg-sky-700 */
+    color: white; /* hover:text-white */
+}
+.navbar-mobile-link-active {
+    background-color: #0c4a6e; /* bg-sky-900 */
+    color: white;
+}
+
+/* Dropdown for Steps in Navbar */
+.nav-dropdown {
+    position: relative;
+}
+.nav-dropdown-content {
+    display: none; /* Hidden by default, shown by JS or :hover/:focus-within */
+    position: absolute;
+    z-index: 10;
+    margin-top: 0.5rem; /* mt-2 */
+    width: 14rem; /* w-56 */
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+    background-color: white; /* bg-white */
+    border: 1px solid rgba(0,0,0,0.05); /* ring-1 ring-black ring-opacity-5 */
+}
+.nav-dropdown:hover .nav-dropdown-content,
+.nav-dropdown button:focus + .nav-dropdown-content, /* Show on focus for accessibility */
+.nav-dropdown-content:hover { /* Keep open if mouse moves to content */
+    display: block;
+}
+
+
+.nav-dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    font-size: 0.875rem; /* text-sm */
+    color: #374151; /* text-gray-700 */
+    text-decoration: none;
+}
+.nav-dropdown-content a:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+    color: #1f2937; /* hover:text-gray-900 */
+}
+.nav-dropdown-max-height { /* For scrollable dropdown if many items */
+    max-height: 24rem; /* max-h-96 */
+    overflow-y: auto;
+}
