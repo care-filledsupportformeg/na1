@@ -169,10 +169,91 @@
         }
         .footer a { color: #0ea5e9; /* sky-500 */ }
         .footer a:hover { color: #0369a1; /* sky-700 */ text-decoration: underline; }
+        
         /* General page styles */
         .page-header { text-align: center; margin-bottom: 2rem; }
         .page-title { font-size: 2.25rem; font-weight: 700; color: #0c4a6e; }
         .page-subtitle { font-size: 1.25rem; color: #374151; }
+        
+        /* Animation styles */
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Prose styles for content */
+        .prose {
+            color: #374151;
+            max-width: 65ch;
+        }
+        .prose p {
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .prose h3 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        .prose ol {
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            padding-left: 1.625rem;
+        }
+        .prose li {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .max-w-none {
+            max-width: none;
+        }
+        
+        /* List styles */
+        .list-decimal {
+            list-style-type: decimal;
+        }
+        .pl-6 {
+            padding-left: 1.5rem;
+        }
+        .space-y-2 > * + * {
+            margin-top: 0.5rem;
+        }
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+        .mt-6 {
+            margin-top: 1.5rem;
+        }
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+        .text-xl {
+            font-size: 1.25rem;
+        }
+        .font-semibold {
+            font-weight: 600;
+        }
+        .text-sky-700 {
+            color: #0369a1;
+        }
+        .text-sm {
+            font-size: 0.875rem;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .text-red-500 {
+            color: #ef4444;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
@@ -184,63 +265,9 @@
     <script type="text/babel">
         // Data for Steps and General Pages
         const stepsData = [
-            { id: 1, title: "Step 1: Honesty", subtitle: "We admitted that we were powerless over our addiction, that our lives had become unmanageable.", text: "Step One is about recognizing the problem. It's the foundation of recovery. We acknowledge our lack of control and the chaos addiction has brought into our lives. This admission is crucial for moving forward.", summary: "Admit powerlessness and unmanageability.", userContentPlaceholder: "<p>Honesty is the cornerstone of this step. It’s about looking at ourselves and our addiction without denial. This can be painful, but it's a necessary first step towards freedom. Many of us found that trying to control our addiction was futile and only led to more problems. Surrendering to this reality opens the door to help.</p>" },
+            { id: 1, title: "Step 1: Honesty", subtitle: "We admitted that we were powerless over our addiction, that our lives had become unmanageable.", text: "Step One is about recognizing the problem. It's the foundation of recovery. We acknowledge our lack of control and the chaos addiction has brought into our lives. This admission is crucial for moving forward.", summary: "Admit powerlessness and unmanageability.", userContentPlaceholder: "<p>Honesty is the cornerstone of this step. It's about looking at ourselves and our addiction without denial. This can be painful, but it's a necessary first step towards freedom. Many of us found that trying to control our addiction was futile and only led to more problems. Surrendering to this reality opens the door to help.</p>" },
             { id: 2, title: "Step 2: Hope", subtitle: "Came to believe that a Power greater than ourselves could restore us to sanity.", text: "Step Two introduces the concept of hope. After admitting powerlessness, we look for a source of strength outside ourselves. This doesn't have to be a religious concept; it can be the group, the program, or any Power greater than oneself.", summary: "Find hope in a Higher Power.", userContentPlaceholder: "<p>For many, the idea of a 'Higher Power' can be challenging. It's important to remember that this is a personal concept. Some find it in a spiritual entity, others in the collective strength of the NA fellowship, or in the principles of recovery themselves. The key is to be open to the possibility that something greater than our own self-will can help.</p>" },
-            { id: 3, title: "Step 3: Surrender", subtitle: "Made a decision to turn our will and our lives over to the care of God as we understood Him.", text: "Step Three is about making a decision. It involves trusting in the Higher Power identified in Step Two and choosing to follow its guidance. This is an act of surrender, letting go of self-will.", summary: "Turn will and life over to a Higher Power.", userContentPlaceholder: "<p>This step requires action. It's not enough to believe; we must decide. This decision can be renewed daily. Turning our will and lives over means we stop fighting and start accepting guidance. It’s about choosing recovery over our old ways. This step can bring a sense of relief and peace.</p>" },
-            { id: 4, title: "Step 4: Courage", subtitle: "Made a searching and fearless moral inventory of ourselves.", text: "Step Four is an honest look at ourselves – our strengths and weaknesses, our assets and liabilities. It's about self-examination without fear, aiming for a thorough understanding of our patterns and behaviors.", summary: "Take a moral inventory.", userContentPlaceholder: "<p>The Fourth Step is often seen as daunting, but it is an act of courage. It's not about dwelling on the past with guilt, but about understanding ourselves better to build a healthier future. Writing an inventory helps to bring clarity and perspective. Many find it helpful to work with a sponsor through this process.</p>" },
-            { id: 5, title: "Step 5: Integrity", subtitle: "Admitted to God, to ourselves, and to another human being the exact nature of our wrongs.", text: "Step Five is about sharing our inventory with someone else. This breaks the isolation of addiction and allows us to see ourselves more clearly through the eyes of another. It requires honesty and integrity.", summary: "Admit wrongs to self, Higher Power, and another person.", userContentPlaceholder: "<p>Sharing our inventory is a powerful experience. It helps to release the burden of secrets and shame. Choosing a trusted person, often a sponsor, to share with is important. This step fosters humility and helps us to accept ourselves, flaws and all. It is a vital step in healing and growth.</p>" },
-            { id: 6, title: "Step 6: Willingness", subtitle: "Were entirely ready to have God remove all these defects of character.", text: "Step Six is about becoming willing to let go of the character defects identified in the inventory. It's a process of preparation for change, recognizing that these defects hinder our growth and recovery.", summary: "Become ready for Higher Power to remove defects.", userContentPlaceholder: "<p>Willingness is the key to Step Six. We may not feel entirely ready, but we can become willing. This step is about opening our hearts and minds to the possibility of change, even if we are afraid. It's about trusting that our Higher Power can help us where we cannot help ourselves.</p>" },
-            { id: 7, title: "Step 7: Humility", subtitle: "Humbly asked Him to remove our shortcomings.", text: "Step Seven is about humility. We humbly ask our Higher Power to remove our shortcomings. This step deepens our reliance on our Higher Power and reinforces our willingness to change.", summary: "Humbly ask Higher Power to remove shortcomings.", userContentPlaceholder: "<p>Humility in this context means having an accurate view of ourselves – neither too proud nor too self-deprecating. It's about recognizing our dependence on a Higher Power for true change. This step is a direct appeal for help in overcoming the flaws that stand in the way of our recovery and spiritual growth.</p>" },
-            { id: 8, title: "Step 8: Brotherly Love", subtitle: "Made a list of all persons we had harmed, and became willing to make amends to them all.", text: "Step Eight involves identifying those we have harmed through our addiction and becoming willing to make amends. It's about taking responsibility for our past actions and preparing to repair the damage.", summary: "List persons harmed and become willing to make amends.", userContentPlaceholder: "<p>This step calls for honesty and thoroughness. We list all persons we have harmed, whether intentionally or unintentionally. Becoming willing to make amends is crucial; it may take time and reflection. This step is not about being forgiven by others, but about cleaning our side of the street.</p>" },
-            { id: 9, title: "Step 9: Justice", subtitle: "Made direct amends to such people wherever possible, except when to do so would injure them or others.", text: "Step Nine is about taking action to make amends. We approach those we have harmed and try to set things right, provided it doesn't cause further harm. This step is about restoring justice and healing relationships.", summary: "Make amends where possible, without causing harm.", userContentPlaceholder: "<p>Making amends requires courage and sincerity. It's important to consider the potential impact on others before acting. Sometimes, an indirect amend or no direct contact is the most responsible approach. This step helps us to live with integrity and to rebuild trust.</p>" },
-            { id: 10, title: "Step 10: Perseverance", subtitle: "Continued to take personal inventory and when we were wrong promptly admitted it.", text: "Step Ten is about maintaining our recovery on a daily basis. We continue to monitor our thoughts, feelings, and actions, and promptly admit our wrongs. This is an ongoing process of self-awareness and correction.", summary: "Continue personal inventory and admit wrongs promptly.", userContentPlaceholder: "<p>Recovery is a journey, not a destination. Step Ten helps us to stay on track. By regularly examining ourselves, we can catch old patterns or new issues before they escalate. Promptly admitting when we are wrong keeps us accountable and humble.</p>" },
-            { id: 11, title: "Step 11: Spirituality", subtitle: "Sought through prayer and meditation to improve our conscious contact with God as we understood Him, praying only for knowledge of His will for us and the power to carry that out.", text: "Step Eleven focuses on spiritual growth. Through prayer and meditation, we seek to deepen our connection with our Higher Power and to understand its will for us. This provides guidance and strength.", summary: "Seek spiritual connection through prayer and meditation.", userContentPlaceholder: "<p>Prayer and meditation are tools for spiritual development. They can take many forms and are personal to each individual. The goal is to improve our conscious contact with our Higher Power and to seek guidance for our lives. This step helps us to find peace and purpose in recovery.</p>" },
-            { id: 12, title: "Step 12: Service", subtitle: "Having had a spiritual awakening as the result of these steps, we tried to carry this message to addicts, and to practice these principles in all our affairs.", text: "Step Twelve is about service and sharing the message of recovery. Having experienced a spiritual awakening, we help others and apply the principles of recovery in all aspects of our lives.", summary: "Carry the message and practice principles in all affairs.", userContentPlaceholder: "<p>Helping others is a cornerstone of NA recovery. By sharing our experience, strength, and hope, we reinforce our own recovery and offer support to those still struggling. Practicing these principles in all our affairs means living a life guided by honesty, integrity, and compassion. Service can take many forms, from sponsoring others to simply being a positive example.</p>" }
-        ];
-
-        const generalPagesData = {
-            'whatIsNA': { 
-                title: "What is Narcotics Anonymous?", 
-                content: `<p>Narcotics Anonymous is a global, community-based organization with a multilingual and multicultural membership. NA was founded in 1953, and our membership growth was minimal during our initial twenty years as an organization. Since the publication of our Basic Text in 1983, the number of members and meetings has increased dramatically. Today, NA members hold more than 70,000 meetings weekly in 144 countries. We offer recovery from the effects of addiction through working a twelve-step program, including regular attendance at group meetings. The group atmosphere provides help from peers and offers an ongoing support network for addicts who wish to pursue and maintain a drug-free lifestyle.</p><p>Our name, Narcotics Anonymous, is not meant to imply a focus on any particular drug; NA’s approach makes no distinction between drugs including alcohol. Membership is free, and we have no affiliation with any organizations outside of NA including governments, religions, law enforcement groups, or medical and psychiatric associations.</p>` 
-            },
-            'traditions': { 
-                title: "The 12 Traditions of NA", 
-                content: `
-                    <p>The Twelve Traditions of Narcotics Anonymous are the guiding principles for our groups and our service structure. They ensure our fellowship remains united and focused on our primary purpose: to carry the message to the addict who still suffers.</p>
-                    <ol class="list-decimal pl-6 space-y-2 mt-4">
-                        <li>Our common welfare should come first; personal recovery depends on NA unity.</li>
-                        <li>For our group purpose there is but one ultimate authority—a loving God as He may express Himself in our group conscience. Our leaders are but trusted servants; they do not govern.</li>
-                        <li>The only requirement for membership is a desire to stop using.</li>
-                        <li>Each group should be autonomous except in matters affecting other groups or NA as a whole.</li>
-                        <li>Each group has but one primary purpose—to carry the message to the addict who still suffers.</li>
-                        <li>An NA group ought never endorse, finance, or lend the NA name to any related facility or outside enterprise, lest problems of money, property, or prestige divert us from our primary purpose.</li>
-                        <li>Every NA group ought to be fully self-supporting, declining outside contributions.</li>
-                        <li>Narcotics Anonymous should remain forever nonprofessional, but our service centers may employ special workers.</li>
-                        <li>NA, as such, ought never be organized, but we may create service boards or committees directly responsible to those they serve.</li>
-                        <li>Narcotics Anonymous has no opinion on outside issues; hence the NA name ought never be drawn into public controversy.</li>
-                        <li>Our public relations policy is based on attraction rather than promotion; we need always maintain personal anonymity at the level of press, radio, and films.</li>
-                        <li>Anonymity is the spiritual foundation of all our traditions, ever reminding us to place principles before personalities.</li>
-                    </ol>
-                ` 
-            },
-            'recoveryRelapse': { 
-                title: "Recovery and Relapse", 
-                content: `
-                    <p>Recovery in Narcotics Anonymous is a journey of ongoing growth and change. It is based on the application of the principles found in our Twelve Steps. While we strive for continuous abstinence, relapse is a reality for some. It is not a sign of failure, but rather an indication that we may need to rededicate ourselves to the program.</p>
-                    <h3 class="text-xl font-semibold mt-6 mb-2 text-sky-700">Understanding Relapse</h3>
-                    <p>Relapse can happen when we neglect our program, become complacent, or face overwhelming challenges without using the tools of recovery. Warning signs often precede a physical relapse, such as isolating, skipping meetings, or returning to old ways of thinking and behaving.</p>
-                    <h3 class="text-xl font-semibold mt-6 mb-2 text-sky-700">Returning from a Relapse</h3>
-                    <p>If a relapse occurs, it is crucial to return to NA as soon as possible. We are always welcomed back. The experience can be a learning opportunity, helping us to strengthen our recovery. Honesty with our sponsor and group, and a renewed commitment to the steps, are key to getting back on track.</p>
-                    <p class="mt-4">The NA program offers continuous support for those in recovery, regardless of past relapses. Our primary purpose is to help addicts find and maintain a new way of life, free from active addiction.</p>
-                `
-            }
-        };
-        
-        // Data for Steps and General Pages
-        const stepsData = [
-            { id: 1, title: "Step 1: Honesty", subtitle: "We admitted that we were powerless over our addiction, that our lives had become unmanageable.", text: "Step One is about recognizing the problem. It's the foundation of recovery. We acknowledge our lack of control and the chaos addiction has brought into our lives. This admission is crucial for moving forward.", summary: "Admit powerlessness and unmanageability.", userContentPlaceholder: "<p>Honesty is the cornerstone of this step. It’s about looking at ourselves and our addiction without denial. This can be painful, but it's a necessary first step towards freedom. Many of us found that trying to control our addiction was futile and only led to more problems. Surrendering to this reality opens the door to help.</p>" },
-            { id: 2, title: "Step 2: Hope", subtitle: "Came to believe that a Power greater than ourselves could restore us to sanity.", text: "Step Two introduces the concept of hope. After admitting powerlessness, we look for a source of strength outside ourselves. This doesn't have to be a religious concept; it can be the group, the program, or any Power greater than oneself.", summary: "Find hope in a Higher Power.", userContentPlaceholder: "<p>For many, the idea of a 'Higher Power' can be challenging. It's important to remember that this is a personal concept. Some find it in a spiritual entity, others in the collective strength of the NA fellowship, or in the principles of recovery themselves. The key is to be open to the possibility that something greater than our own self-will can help.</p>" },
-            { id: 3, title: "Step 3: Surrender", subtitle: "Made a decision to turn our will and our lives over to the care of God as we understood Him.", text: "Step Three is about making a decision. It involves trusting in the Higher Power identified in Step Two and choosing to follow its guidance. This is an act of surrender, letting go of self-will.", summary: "Turn will and life over to a Higher Power.", userContentPlaceholder: "<p>This step requires action. It's not enough to believe; we must decide. This decision can be renewed daily. Turning our will and lives over means we stop fighting and start accepting guidance. It’s about choosing recovery over our old ways. This step can bring a sense of relief and peace.</p>" },
+            { id: 3, title: "Step 3: Surrender", subtitle: "Made a decision to turn our will and our lives over to the care of God as we understood Him.", text: "Step Three is about making a decision. It involves trusting in the Higher Power identified in Step Two and choosing to follow its guidance. This is an act of surrender, letting go of self-will.", summary: "Turn will and life over to a Higher Power.", userContentPlaceholder: "<p>This step requires action. It's not enough to believe; we must decide. This decision can be renewed daily. Turning our will and lives over means we stop fighting and start accepting guidance. It's about choosing recovery over our old ways. This step can bring a sense of relief and peace.</p>" },
             { id: 4, title: "Step 4: Courage", subtitle: "Made a searching and fearless moral inventory of ourselves.", text: "Step Four is an honest look at ourselves – our strengths and weaknesses, our assets and liabilities. It's about self-examination without fear, aiming for a thorough understanding of our patterns and behaviors.", summary: "Take a moral inventory.", userContentPlaceholder: "<p>The Fourth Step is often seen as daunting, but it is an act of courage. It's not about dwelling on the past with guilt, but about understanding ourselves better to build a healthier future. Writing an inventory helps to bring clarity and perspective. Many find it helpful to work with a sponsor through this process.</p>" },
             { id: 5, title: "Step 5: Integrity", subtitle: "Admitted to God, to ourselves, and to another human being the exact nature of our wrongs.", text: "Step Five is about sharing our inventory with someone else. This breaks the isolation of addiction and allows us to see ourselves more clearly through the eyes of another. It requires honesty and integrity.", summary: "Admit wrongs to self, Higher Power, and another person.", userContentPlaceholder: "<p>Sharing our inventory is a powerful experience. It helps to release the burden of secrets and shame. Choosing a trusted person, often a sponsor, to share with is important. This step fosters humility and helps us to accept ourselves, flaws and all. It is a vital step in healing and growth.</p>" },
             { id: 6, title: "Step 6: Willingness", subtitle: "Were entirely ready to have God remove all these defects of character.", text: "Step Six is about becoming willing to let go of the character defects identified in the inventory. It's a process of preparation for change, recognizing that these defects hinder our growth and recovery.", summary: "Become ready for Higher Power to remove defects.", userContentPlaceholder: "<p>Willingness is the key to Step Six. We may not feel entirely ready, but we can become willing. This step is about opening our hearts and minds to the possibility of change, even if we are afraid. It's about trusting that our Higher Power can help us where we cannot help ourselves.</p>" },
@@ -256,7 +283,7 @@
             'whatIsNA': { 
                 key: 'whatIsNA',
                 title: "What is Narcotics Anonymous?", 
-                content: `<p>Narcotics Anonymous is a global, community-based organization with a multilingual and multicultural membership. NA was founded in 1953, and our membership growth was minimal during our initial twenty years as an organization. Since the publication of our Basic Text in 1983, the number of members and meetings has increased dramatically. Today, NA members hold more than 70,000 meetings weekly in 144 countries. We offer recovery from the effects of addiction through working a twelve-step program, including regular attendance at group meetings. The group atmosphere provides help from peers and offers an ongoing support network for addicts who wish to pursue and maintain a drug-free lifestyle.</p><p>Our name, Narcotics Anonymous, is not meant to imply a focus on any particular drug; NA’s approach makes no distinction between drugs including alcohol. Membership is free, and we have no affiliation with any organizations outside of NA including governments, religions, law enforcement groups, or medical and psychiatric associations.</p>` 
+                content: `<p>Narcotics Anonymous is a global, community-based organization with a multilingual and multicultural membership. NA was founded in 1953, and our membership growth was minimal during our initial twenty years as an organization. Since the publication of our Basic Text in 1983, the number of members and meetings has increased dramatically. Today, NA members hold more than 70,000 meetings weekly in 144 countries. We offer recovery from the effects of addiction through working a twelve-step program, including regular attendance at group meetings. The group atmosphere provides help from peers and offers an ongoing support network for addicts who wish to pursue and maintain a drug-free lifestyle.</p><p>Our name, Narcotics Anonymous, is not meant to imply a focus on any particular drug; NA's approach makes no distinction between drugs including alcohol. Membership is free, and we have no affiliation with any organizations outside of NA including governments, religions, law enforcement groups, or medical and psychiatric associations.</p>` 
             },
             'traditions': { 
                 key: 'traditions',
@@ -293,30 +320,20 @@
             }
         };
         
-        // Helper function to parse URL hash for routing
-        // Returns an object like { page: 'home' } or { page: 'step', id: 1 } or { page: 'general', key: 'whatIsNA' }
-        function parseCurrentPageFromHash() {
+        // Helper function to get current page from URL hash
+        function getCurrentPageFromHash() {
             const hash = window.location.hash.substring(1);
-            if (!hash) return { page: 'home' };
-
-            const parts = hash.split('/');
-            if (parts.length === 2 && parts[0] === 'step' && !isNaN(parseInt(parts[1]))) {
-                return { pageType: 'step', id: parseInt(parts[1]) };
-            }
-            if (parts.length === 2 && parts[0] === 'page' && generalPagesData[parts[1]]) {
-                return { pageType: 'general', key: parts[1] };
-            }
-            // Simple pages like 'jft', 'home', 'what-is-na' (legacy, will be redirected by Navbar to page/whatIsNA)
-            if (generalPagesData[hash]) { // If hash is a direct key for generalPagesData
-                 return { pageType: 'general', key: hash};
-            }
-            if (hash === 'jft') return { pageType: 'jft' };
-            if (hash === 'home') return { pageType: 'home' };
+            if (!hash) return 'home';
             
-            // Fallback or default
-            return { pageType: 'home' }; 
+            // Handle direct mapping for simple pages
+            const pageMap = {
+                'home': 'home',
+                'jft': 'jft',
+                'what-is-na': 'what-is-na'
+            };
+            
+            return pageMap[hash] || 'home';
         }
-
 
         // JustForTodayPage Component
         function JustForTodayPage() {
@@ -410,7 +427,7 @@
             
             // Mock content for fallback
             const mockTextContent = `
-                                     May 27, 2024 (Mock Data)
+                                     May 25, 2025 (Mock Data)
 
                                      Embracing Change
 
@@ -424,9 +441,8 @@
 
         The willingness to change is a cornerstone of our new life.
        Just for Today: I will embrace change as an opportunity for growth.
-           Copyright (c) 2007-2023, NA World Services, Inc. All Rights Reserved
+           Copyright (c) 2007-2025, NA World Services, Inc. All Rights Reserved
             `;
-
 
             React.useEffect(() => {
                 const proxyUrl = 'https://api.allorigins.win/raw?url=';
@@ -446,201 +462,4 @@
                     .catch(fetchError => {
                         console.error('Error fetching JFT content:', fetchError);
                         // Fallback to mock content on error
-                        const mockHtml = parseJFTContent(mockTextContent);
-                        setJftData(mockHtml); // Show mock data instead of error message for now
-                        setError(`Error loading Just For Today reading: ${fetchError.message}. Displaying mock data.`); // Set error for potential display
-                    })
-                    .finally(() => {
-                        setLoading(false);
-                    });
-            }, []);
-
-            if (loading) {
-                return <div id="loading-message">Loading today's reading...</div>;
-            }
-
-            // Error is logged, and mock data is shown. If needed, display error more prominently.
-            // if (error && !jftData) { // Only show error if no data (even mock) is available
-            //    return <div id="loading-message" className="text-red-500">{error}</div>;
-            // }
-
-
-            return (
-                <main className="animate-fadeIn container-mx-auto py-8">
-                    <header className="page-header">
-                        <h1 className="page-title">Just For Today</h1>
-                        <p className="page-subtitle">Daily Meditation from Narcotics Anonymous</p>
-                    </header>
-                    <div className="jft-card" dangerouslySetInnerHTML={{ __html: jftData }}>
-                        {/* JFT content will be injected here */}
-                    </div>
-                </main>
-            );
-        }
-
-        // Navbar Component
-        function Navbar({ currentPage, setCurrentPage }) {
-            const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-
-            const navLinks = [
-                { name: 'Home', page: 'home' },
-                { name: 'What is NA?', page: 'what-is-na' },
-                // { name: 'The 12 Steps', page: 'steps' }, // Placeholder for dropdown
-                { name: 'Just For Today', page: 'jft' },
-            ];
-
-            const handleNavClick = (page) => {
-                setCurrentPage(page);
-                setIsMobileMenuOpen(false); // Close mobile menu on navigation
-                window.location.hash = page; // Update URL hash
-            };
-            
-            // SVG icon for the logo
-            const LogoSvg = () => (
-                <svg className="navbar-logo-svg" fill="none" viewBox="0 0 100 100" stroke="currentColor">
-                    <circle cx="50" cy="50" r="40" strokeWidth="5" />
-                    <rect x="30" y="30" width="40" height="40" strokeWidth="5" transform="rotate(45 50 50)" />
-                    <text x="50" y="55" textAnchor="middle" fontSize="20" fontWeight="bold" fill="white">NA</text>
-                </svg>
-            );
-
-            return (
-                <nav className="navbar-bg">
-                    <div className="navbar-container">
-                        <div className="navbar-flex-container">
-                            <div className="navbar-logo-flex">
-                                <a onClick={() => handleNavClick('home')} style={{cursor: 'pointer'}} className="flex items-center space-x-2">
-                                    <LogoSvg />
-                                    <span className="navbar-logo-text">NA Website</span>
-                                </a>
-                            </div>
-                            <div className="hidden md:block">
-                                <div className="navbar-links-flex">
-                                    {navLinks.map(link => (
-                                        <a key={link.page}
-                                           onClick={() => handleNavClick(link.page)}
-                                           className={`navbar-link ${currentPage === link.page ? 'navbar-link-active' : ''}`}>
-                                            {link.name}
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
-                            <div className="md:hidden -mr-2 flex">
-                                <button type="button"
-                                        className="navbar-mobile-menu-button-styles"
-                                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                        aria-controls="mobile-menu"
-                                        aria-expanded={isMobileMenuOpen}>
-                                    <span className="sr-only">Open main menu</span>
-                                    {isMobileMenuOpen ? (
-                                        <svg className="navbar-mobile-menu-icon" id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                                    ) : (
-                                        <svg className="navbar-mobile-menu-icon" id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
-                                    )}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    {isMobileMenuOpen && (
-                        <div className="md:hidden" id="mobile-menu">
-                            <div className="navbar-mobile-menu-links-container">
-                                {navLinks.map(link => (
-                                    <a key={link.page}
-                                       onClick={() => handleNavClick(link.page)}
-                                       className={`navbar-mobile-link ${currentPage === link.page ? 'navbar-mobile-link-active' : ''}`}>
-                                        {link.name}
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-                </nav>
-            );
-        }
-        
-        // Footer Component
-        function Footer() {
-            const currentYear = new Date().getFullYear();
-            return (
-                <footer className="footer">
-                    <div className="container-mx-auto">
-                        <p>&copy; {currentYear} NA Information Website. Content adapted from NA Fellowship-approved literature.</p>
-                        <p>Narcotics Anonymous, NA, and the NA Way are registered trademarks of Narcotics Anonymous World Services, Inc.</p>
-                    </div>
-                </footer>
-            );
-        }
-
-        // Placeholder for HomePage
-        function HomePage() {
-            return (
-                <main className="animate-fadeIn container-mx-auto py-8">
-                    <header className="page-header">
-                        <h1 className="page-title">Welcome to NA</h1>
-                        <p className="page-subtitle">Hope, Help, and Recovery</p>
-                    </header>
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                        <p className="text-lg">
-                            This is a simple React application to provide information about Narcotics Anonymous.
-                            Use the navigation to explore different sections.
-                        </p>
-                    </div>
-                </main>
-            );
-        }
-        
-        // Placeholder for WhatIsNAPage
-        function WhatIsNAPage() {
-             return (
-                <main className="animate-fadeIn container-mx-auto py-8">
-                    <header className="page-header">
-                        <h1 className="page-title">What is Narcotics Anonymous?</h1>
-                    </header>
-                    <div className="bg-white p-6 rounded-lg shadow-md prose max-w-none">
-                        <p>Narcotics Anonymous is a global, community-based organization with a multilingual and multicultural membership. NA was founded in 1953, and our membership growth was minimal during our initial twenty years as an organization. Since the publication of our Basic Text in 1983, the number of members and meetings has increased dramatically. Today, NA members hold more than 70,000 meetings weekly in 144 countries. We offer recovery from the effects of addiction through working a twelve-step program, including regular attendance at group meetings. The group atmosphere provides help from peers and offers an ongoing support network for addicts who wish to pursue and maintain a drug-free lifestyle.</p>
-                        <p>Our name, Narcotics Anonymous, is not meant to imply a focus on any particular drug; NA’s approach makes no distinction between drugs including alcohol. Membership is free, and we have no affiliation with any organizations outside of NA including governments, religions, law enforcement groups, or medical and psychiatric associations.</p>
-                    </div>
-                </main>
-            );
-        }
-
-
-        // Main App Component
-        function App() {
-            const [currentPage, setCurrentPage] = React.useState(getCurrentPageFromHash());
-
-            React.useEffect(() => {
-                const handleHashChange = () => {
-                    setCurrentPage(getCurrentPageFromHash());
-                };
-                window.addEventListener('hashchange', handleHashChange);
-                return () => window.removeEventListener('hashchange', handleHashChange);
-            }, []);
-            
-            let pageContent;
-            switch (currentPage) {
-                case 'home':
-                    pageContent = <HomePage />;
-                    break;
-                case 'jft':
-                    pageContent = <JustForTodayPage />;
-                    break;
-                case 'what-is-na':
-                    pageContent = <WhatIsNAPage />;
-                    break;
-                default:
-                    pageContent = <HomePage />; // Fallback to HomePage
-            }
-
-            return (
-                <div>
-                    <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-                    {pageContent}
-                    <Footer />
-                </div>
-            );
-        }
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
-</body>
-</html>
+                        const mockHtml = parseJ
