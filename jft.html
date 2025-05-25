@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily meditation readings from 'Just For Today' by Narcotics Anonymous. Get your daily inspiration for recovery.">
+    <meta name="keywords" content="NA, Narcotics Anonymous, Just For Today, JFT, daily meditation, recovery, inspiration, daily reading, hope">
+    <title>Just For Today - Daily NA Meditation</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* Page-specific styles for JFT page if needed */
+        .jft-card {
+            background-color: white;
+            padding: 2rem; /* Increased padding */
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+        }
+        .jft-title {
+            font-size: 1.75rem; /* text-2xl or a bit larger */
+            font-weight: 700;
+            color: #0c4a6e; /* sky-800 */
+            margin-bottom: 0.5rem;
+        }
+        .jft-date {
+            font-size: 1rem;
+            color: #52525b; /* zinc-600 */
+            margin-bottom: 1rem;
+        }
+        .jft-page-ref {
+            font-size: 0.875rem;
+            color: #71717a; /* zinc-500 */
+            margin-bottom: 1.5rem;
+        }
+        .jft-quote {
+            font-style: italic;
+            background-color: #f0f9ff; /* sky-50 */
+            padding: 1rem;
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            margin-bottom: 1.5rem;
+            color: #374151; /* gray-700 */
+        }
+        .jft-body p {
+            margin-bottom: 1em;
+            line-height: 1.7; /* Slightly more spacious for reading */
+        }
+        .jft-affirmation {
+            margin-top: 2rem;
+            font-weight: 600;
+            color: #0369a1; /* sky-700 */
+            background-color: #e0f2fe; /* sky-100 */
+            padding: 1.5rem;
+            border-radius: 0.5rem; /* 8px */
+        }
+        #loading-message {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #374151;
+            padding: 3rem;
+        }
+    </style>
+</head>
+<body class="bg-sky-50">
+
+    <!-- Navbar (standard structure) -->
+    <nav class="navbar-bg">
+        <div class="navbar-container">
+            <div class="navbar-flex-container">
+                <div class="navbar-logo-flex">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg class="navbar-logo-svg" fill="none" viewBox="0 0 100 100" stroke="currentColor"><circle cx="50" cy="50" r="40" stroke-width="5" /><rect x="30" y="30" width="40" height="40" stroke-width="5" transform="rotate(45 50 50)" /><text x="50" y="55" text-anchor="middle" font-size="20" font-weight="bold" fill="white">NA</text></svg>
+                        <span class="navbar-logo-text">NA Website</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="navbar-links-flex">
+                        <a href="index.html" class="navbar-link">Home</a>
+                        <a href="whatIsNA.html" class="navbar-link">What is NA?</a>
+                        <div class="nav-dropdown">
+                            <button class="navbar-link flex items-center">The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                            <div class="nav-dropdown-content nav-dropdown-max-height"><!-- Populated by JS --></div>
+                        </div>
+                        <a href="traditions.html" class="navbar-link">The 12 Traditions</a>
+                        <a href="recoveryRelapse.html" class="navbar-link">Recovery & Relapse</a>
+                        <a href="jft.html" class="navbar-link navbar-link-active">Just For Today</a>
+                    </div>
+                </div>
+                <div class="md:hidden -mr-2 flex">
+                    <button type="button" class="navbar-mobile-menu-button-styles" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="navbar-mobile-menu-icon" id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg class="navbar-mobile-menu-icon hidden" id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="navbar-mobile-menu-links-container">
+                <a href="index.html" class="navbar-mobile-link">Home</a>
+                <a href="whatIsNA.html" class="navbar-mobile-link">What is NA?</a>
+                <div class="nav-dropdown-mobile">
+                    <button class="navbar-mobile-link w-full text-left flex justify-between items-center" id="mobile-steps-button">The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                    <div class="pl-4 hidden" id="mobile-steps-dropdown"><!-- Populated by JS --></div>
+                </div>
+                <a href="traditions.html" class="navbar-mobile-link">The 12 Traditions</a>
+                <a href="recoveryRelapse.html" class="navbar-mobile-link">Recovery & Relapse</a>
+                <a href="jft.html" class="navbar-mobile-link navbar-mobile-link-active">Just For Today</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="animate-fadeIn container-mx-auto py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-sky-700">Just For Today</h1>
+            <p class="text-lg text-gray-600">Daily Meditation from Narcotics Anonymous</p>
+        </header>
+
+        <div id="jft-content-area" class="jft-card">
+            <div id="loading-message">Loading today's reading...</div>
+            <!-- JFT content will be injected here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer (standard structure) -->
+    <footer class="footer">
+        <div class="container-mx-auto">
+            <div class="mb-6"><h3 class="text-xl font-semibold text-sky-800 mb-3">Literature & Resources</h3><ul class="list-none space-y-2 text-gray-600"><li><a href="assets/basic-text-sixth-edition.pdf" target="_blank">Basic Text of Narcotics Anonymous (Sixth Edition)</a></li><li><a href="assets/it-works-how-and-why.pdf" target="_blank">It Works How and Why</a></li><li><a href="assets/step-working-guide.pdf" target="_blank">The NA Step Working Guides</a></li><li><a href="assets/just-for-today.pdf" target="_blank">Just For Today (Full PDF)</a></li></ul></div>
+            <p>&copy; <span id="currentYear"></span> NA Information Website. Content adapted from NA Fellowship-approved literature.</p>
+            <p>Narcotics Anonymous, NA, and the NA Way are registered trademarks of Narcotics Anonymous World Services, Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Standard Navbar, Footer Year, Steps Dropdown JS (from index.html)
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+        const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuIconOpen.classList.toggle('hidden');
+            mobileMenuIconClose.classList.toggle('hidden');
+        });
+        const mobileStepsButton = document.getElementById('mobile-steps-button');
+        const mobileStepsDropdown = document.getElementById('mobile-steps-dropdown');
+        if (mobileStepsButton && mobileStepsDropdown) {
+            mobileStepsButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                mobileStepsDropdown.classList.toggle('hidden');
+            });
+        }
+        const navLinks = document.querySelectorAll('.navbar-link, .navbar-mobile-link');
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (linkPath === currentPath) { link.classList.add('navbar-link-active', 'navbar-mobile-link-active'); }
+            if ((currentPath === 'index.html' || currentPath === '') && linkPath === 'index.html') { link.classList.add('navbar-link-active', 'navbar-mobile-link-active');}
+            // Ensure JFT link is active on jft.html
+            if (currentPath === 'jft.html' && linkPath === 'jft.html') {
+                 link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+            } else if (linkPath === 'jft.html' && currentPath !== 'jft.html') { // Ensure it's not active on other pages
+                 link.classList.remove('navbar-link-active', 'navbar-mobile-link-active');
+            }
+        });
+        const stepsDataForNav = Array.from({length: 12}, (_, i) => ({id: i + 1, title: \`Step \${i + 1}\`}));
+        const desktopDropdown = document.querySelector('.nav-dropdown-content');
+        const mobileDropdownContainerForNav = document.getElementById('mobile-steps-dropdown');
+        if (desktopDropdown) { desktopDropdown.innerHTML = ''; stepsDataForNav.forEach(step => { const a = document.createElement('a'); a.href = \`step\${step.id}.html\`; a.textContent = step.title; desktopDropdown.appendChild(a); });}
+        if (mobileDropdownContainerForNav) { mobileDropdownContainerForNav.innerHTML = ''; stepsDataForNav.forEach(step => { const a = document.createElement('a'); a.href = \`step\${step.id}.html\`; a.textContent = step.title; a.className = 'navbar-mobile-link block'; mobileDropdownContainerForNav.appendChild(a); });}
+
+        // JFT Fetching and Display Logic
+        async function fetchJFTAndParse() {
+            const contentArea = document.getElementById('jft-content-area');
+            const loadingMessage = document.getElementById('loading-message');
+            const proxyUrl = 'https://api.allorigins.win/raw?url='; // A common CORS proxy
+            const targetUrl = 'https://www.jftna.org/jft/';
+            
+            try {
+                loadingMessage.textContent = 'Fetching today\'s reading...';
+                const response = await fetch(proxyUrl + encodeURIComponent(targetUrl));
+                if (!response.ok) {
+                    throw new Error(\`HTTP error! status: \${response.status}\`);
+                }
+                const rawText = await response.text();
+                parseAndDisplayJFTContent(rawText);
+
+            } catch (error) {
+                console.error('Error fetching JFT content:', error);
+                if (loadingMessage) {
+                    loadingMessage.innerHTML = \`Error loading Just For Today reading: \${error.message}.<br>You can try visiting <a href="https://www.jftna.org/jft/" target="_blank" class="text-sky-600 hover:underline">www.jftna.org/jft</a> directly.\`;
+                }
+                // Fallback to mock content on error for demonstration
+                const mockTextContent = \`
+                                     May 27, 2024 (Mock Data)
+
+                                     Embracing Change
+
+                                       Page 153
+         "Our Higher Power offers us the chance to change and grow."
+                                   Basic Text, p. 90
+        Change can be unsettling, but in recovery, it's the pathway to freedom.
+        Every day offers new opportunities to practice these principles and see
+        our lives transform in ways we never imagined. We learn to trust the
+        process and the Power greater than ourselves.
+
+        The willingness to change is a cornerstone of our new life.
+       Just for Today: I will embrace change as an opportunity for growth.
+           Copyright (c) 2007-2023, NA World Services, Inc. All Rights Reserved
+                \`;
+                parseAndDisplayJFTContent(mockTextContent);
+            }
+        }
+
+        function parseAndDisplayJFTContent(rawText) {
+            const contentArea = document.getElementById('jft-content-area');
+            const loadingMessage = document.getElementById('loading-message');
+            if (loadingMessage) loadingMessage.style.display = 'none';
+
+            const lines = rawText.trim().split('\\n');
+            
+            let jftDate = '';
+            let jftTitle = '';
+            let jftPageRef = '';
+            let jftQuote = [];
+            let jftQuoteSource = '';
+            let jftBody = [];
+            let jftAffirmation = '';
+
+            let lineIndex = 0;
+
+            // Date
+            while(lineIndex < lines.length && lines[lineIndex].trim() === '') lineIndex++;
+            if(lineIndex < lines.length) jftDate = lines[lineIndex++].trim();
+
+            // Title
+            while(lineIndex < lines.length && lines[lineIndex].trim() === '') lineIndex++;
+            if(lineIndex < lines.length) jftTitle = lines[lineIndex++].trim();
+            
+            // Page Reference (contains "Page ")
+            // Skip potential blank lines before page ref
+            while(lineIndex < lines.length && lines[lineIndex].trim() === '') lineIndex++; 
+            if(lineIndex < lines.length && lines[lineIndex].includes("Page ")) {
+                jftPageRef = lines[lineIndex++].trim();
+            } else { // If not found immediately, scan a few more lines
+                 for(let i=0; i<3 && lineIndex < lines.length; i++) {
+                    if (lines[lineIndex].includes("Page ")) {
+                        jftPageRef = lines[lineIndex].trim();
+                        lineIndex++;
+                        break;
+                    }
+                    lineIndex++; // Consume line if not page ref
+                 }
+            }
+            
+            // Quote (lines starting with " ", until the source)
+            while(lineIndex < lines.length && lines[lineIndex].trim() === '') lineIndex++; 
+            while(lineIndex < lines.length && lines[lineIndex].startsWith("     ")) { 
+                jftQuote.push(lines[lineIndex].trim());
+                lineIndex++;
+            }
+            
+            // Quote Source 
+            if(lineIndex < lines.length && lines[lineIndex].trim() !== "" && !lines[lineIndex].trim().startsWith("Just for Today:")) {
+                const potentialSource = lines[lineIndex].trim();
+                // Common source patterns or just take the line if it's not body-like
+                if(potentialSource.includes("IP No.") || potentialSource.includes("Basic Text") || potentialSource.includes("Tradition") || potentialSource.length < 100 && !potentialSource.match(/[a-z]{2,}/) ) { // Heuristic: short, not a full sentence
+                     jftQuoteSource = potentialSource;
+                     lineIndex++;
+                }
+            }
+
+            // Body and Affirmation
+            while(lineIndex < lines.length) {
+                const line = lines[lineIndex].trim();
+                if (line.startsWith("Just for Today:")) {
+                    jftAffirmation = line; 
+                    // Check if affirmation continues on the next line (JFT website sometimes splits it)
+                    if (lineIndex + 1 < lines.length && lines[lineIndex+1].trim() && !lines[lineIndex+1].trim().startsWith("Copyright (c)")) {
+                        jftAffirmation += " " + lines[lineIndex+1].trim();
+                        lineIndex++; // consume next line as part of affirmation
+                    }
+                } else if (jftAffirmation && line) { 
+                    // This case should ideally not be hit if affirmation is handled above
+                } else if (line && !line.startsWith("Copyright (c)") && !line.startsWith("-----------")) {
+                    jftBody.push(line);
+                }
+                lineIndex++;
+            }
+            
+            jftAffirmation = jftAffirmation.replace(/\s+/g, ' ').trim();
+
+            let html = '';
+            if (jftDate) html += \`<p class="jft-date">\${jftDate}</p>\`;
+            if (jftTitle) html += \`<h2 class="jft-title">\${jftTitle}</h2>\`;
+            if (jftPageRef) html += \`<p class="jft-page-ref">\${jftPageRef}</p>\`;
+            
+            if (jftQuote.length > 0) {
+                html += '<div class="jft-quote">';
+                jftQuote.forEach(qLine => html += \`<p>\${qLine}</p>\`);
+                if (jftQuoteSource) html += \`<p class="mt-2 text-sm text-right">\${jftQuoteSource}</p>\`;
+                html += '</div>';
+            }
+            
+            html += '<div class="jft-body prose max-w-none">'; 
+            jftBody.forEach(bLine => html += \`<p>\${bLine}</p>\`);
+            html += '</div>';
+            
+            if (jftAffirmation) {
+                html += \`<p class="jft-affirmation">\${jftAffirmation}</p>\`;
+            }
+
+            contentArea.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchJFTAndParse);
+
+    </script>
+</body>
+</html>

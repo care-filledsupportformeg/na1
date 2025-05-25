@@ -3,191 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NA Step 2: Detailed Visual Breakdown</title>
+    <title>Step 2 - Narcotics Anonymous</title>
+    <meta name="description" content="Understanding Step 2 of NA: We came to believe that a Power greater than ourselves could restore us to sanity. Discover hope and belief in the recovery process.">
+    <meta name="keywords" content="NA, Narcotics Anonymous, Step 2, Higher Power, sanity, belief, hope, open-mindedness, recovery">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #e0f2fe;
-        }
-        .container-fluid {
-            padding: 1rem;
-        }
-        @media (min-width: 640px) {
-            .container-fluid {
-                padding: 2rem;
-            }
-        }
-        .main-title {
-            color: #0c4a6e;
-            margin-bottom: 2rem;
-        }
-        .step-box {
-            background-color: #0ea5e9;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .card {
-            background-color: #ffffff;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-        }
-        .card-header {
-            background-color: #7dd3fc;
-            color: #0c4a6e;
-            padding: 1rem 1.5rem;
-            border-bottom: 1px solid #bae6fd;
-        }
-        .card-content {
-            padding: 1.5rem;
-            color: #374151;
-        }
-        .highlight {
-            color: #0369a1;
-            font-weight: 600;
-        }
-        .emphasis {
-            font-style: italic;
-            color: #0ea5e9;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
-        .key-themes-card {
-            background-color: #f0f9ff;
-            border: 2px solid #7dd3fc;
-        }
-        .key-themes-header {
-            background-color: #38bdf8;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body class="container-fluid">
+<body class="step-page-background">
 
-    <header class="text-center my-8">
-        <h1 class="main-title text-3xl sm:text-4xl md:text-5xl font-bold">
-            A Deep Dive into Step Two of Narcotics Anonymous
-        </h1>
-    </header>
-
-    <div class="step-box">
-        <h2 class="text-2xl sm:text-3xl font-semibold">Step Two: "We came to believe that a Power greater than ourselves could restore us to sanity."</h2>
-    </div>
-
-    <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from the Basic Text</h3>
+    <!-- Navbar -->
+    <nav class="navbar-bg">
+        <div class="navbar-container">
+            <div class="navbar-flex-container">
+                <div class="navbar-logo-flex">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg class="navbar-logo-svg" fill="none" viewBox="0 0 100 100" stroke="currentColor">
+                          <circle cx="50" cy="50" r="40" stroke-width="5" />
+                          <rect x="30" y="30" width="40" height="40" stroke-width="5" transform="rotate(45 50 50)" />
+                          <text x="50" y="55" text-anchor="middle" font-size="20" font-weight="bold" fill="white">NA</text>
+                        </svg>
+                        <span class="navbar-logo-text">NA Website</span>
+                    </a>
                 </div>
-                <div class="card-content">
-                    <p class="mb-3">The Basic Text introduces Step Two as the beginning of hope and the possibility of change.</p>
-                    <ul>
-                        <li><span class="highlight">Restoration to Sanity:</span> "Sanity" is defined as soundness of mind. For addicts, it means freedom from self-destructive thinking and behavior. Step Two is about believing that change is possible.</li>
-                        <li><span class="highlight">A Power Greater Than Ourselves:</span> This step doesn't require defining or understanding a Higher Power, only the willingness to believe that help is possible from outside ourselves.</li>
-                        <li><span class="highlight">Open-mindedness:</span> Step Two asks us to let go of past prejudices and to become open to new ideas and possibilities, especially regarding spirituality and recovery.</li>
-                        <li><span class="highlight">Hope:</span> The step is often the first time many addicts feel genuine hope that they can recover and live differently.</li>
-                        <li><span class="highlight">The Importance of Fellowship:</span> Seeing others recover helps members believe that recovery is possible for them, too.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">The Basic Text emphasizes that Step Two is a process, not a single event. Willingness and open-mindedness are key.</p>
+                <div class="hidden md:block">
+                    <div class="navbar-links-flex">
+                        <a href="index.html" class="navbar-link">Home</a>
+                        <a href="whatIsNA.html" class="navbar-link">What is NA?</a>
+                        <div class="nav-dropdown">
+                            <button class="navbar-link flex items-center navbar-link-active"> <!-- Active state for 12 Steps parent -->
+                                The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div class="nav-dropdown-content nav-dropdown-max-height">
+                                <!-- Populated by JS, stepX.html link will be styled as active by JS -->
+                            </div>
+                        </div>
+                        <a href="traditions.html" class="navbar-link">The 12 Traditions</a>
+                        <a href="recoveryRelapse.html" class="navbar-link">Recovery & Relapse</a>
+                        <a href="jft.html" class="navbar-link">Just For Today</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from "It Works: How and Why"</h3>
-                </div>
-                <div class="card-content">
-                    <p class="mb-3">"It Works: How and Why" explores the spiritual principles and practical application of Step Two.</p>
-                    <ul>
-                        <li><span class="highlight">Belief Develops Gradually:</span> Step Two doesn't require instant faith—just the willingness to believe that recovery is possible.</li>
-                        <li><span class="highlight">Letting Go of Old Beliefs:</span> Many addicts come to NA with negative or confused ideas about spirituality. Step Two is about letting go of those that no longer serve us.</li>
-                        <li><span class="highlight">Restoration is Ongoing:</span> Sanity is restored little by little as we continue in recovery. This includes rational thinking, healthy decisions, and emotional balance.</li>
-                        <li><span class="highlight">The Role of Experience:</span> By witnessing the recovery of others, we gain evidence that a Power greater than ourselves is at work.</li>
-                        <li><span class="highlight">Personal Understanding:</span> Each member is encouraged to develop their own concept of a Higher Power, without pressure to conform to any specific belief system.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">"It Works" highlights that Step Two is about hope, possibility, and the beginning of a spiritual journey unique to each member.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-xl font-semibold">Insights from the Step Working Guides</h3>
-                </div>
-                <div class="card-content">
-                    <p class="mb-3">The Step Working Guides provide practical questions and exercises for Step Two.</p>
-                    <ul>
-                        <li><span class="highlight">What Does "Sanity" Mean to Me?:</span> Encourages reflection on how addiction affected one's thinking and behavior, and what sanity might look like in recovery.</li>
-                        <li><span class="highlight">Exploring Belief:</span> Prompts members to examine their beliefs about a Higher Power, spirituality, and what it means to trust something outside themselves.</li>
-                        <li><span class="highlight">Willingness to Change:</span> Asks about openness to new ideas and experiences, and what it would take to believe in the possibility of recovery.</li>
-                        <li><span class="highlight">Evidence of Restoration:</span> Encourages looking for signs, even small ones, that sanity is being restored—such as better decision-making or less chaos.</li>
-                        <li><span class="highlight">Barriers to Belief:</span> Helps members identify fears, doubts, or resentments that may block belief in a Power greater than themselves.</li>
-                    </ul>
-                    <p class="mt-3 emphasis">The guides help make Step Two a personal, practical process—one of honest self-examination and growing hope.</p>
+                <div class="md:hidden -mr-2 flex">
+                    <button type="button" class="navbar-mobile-menu-button-styles" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="navbar-mobile-menu-icon" id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg class="navbar-mobile-menu-icon hidden" id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
                 </div>
             </div>
         </div>
-
-        <div class="card key-themes-card mt-8">
-            <div class="card-header key-themes-header">
-                <h3 class="text-2xl font-semibold text-center">Key Themes & Synthesis of Step Two</h3>
-            </div>
-            <div class="card-content">
-                <p class="mb-4 text-lg">Step Two is the step of hope, possibility, and the beginning of spiritual awakening. Key themes include:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">1. Willingness and Open-mindedness</h4>
-                        <p>Step Two asks only for willingness to believe in the possibility of change and to be open to new ideas about recovery and spirituality.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">2. Hope and Restoration</h4>
-                        <p>Hope replaces despair as we begin to believe that sanity and a better life are possible through recovery.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">3. The Power of Example</h4>
-                        <p>Seeing others recover is powerful evidence that a Power greater than ourselves can work in our lives too.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">4. Individual Spiritual Path</h4>
-                        <p>Each person's understanding of a Higher Power is personal and unique. Step Two encourages exploration, not conformity.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">5. Gradual Process</h4>
-                        <p>Belief and restoration to sanity are not instant—they unfold over time as we continue in recovery.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-sky-700 mb-2">6. Letting Go of the Past</h4>
-                        <p>Step Two involves releasing old beliefs and attitudes that kept us trapped in addiction, making room for new growth.</p>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="navbar-mobile-menu-links-container">
+                <a href="index.html" class="navbar-mobile-link">Home</a>
+                <a href="whatIsNA.html" class="navbar-mobile-link">What is NA?</a>
+                <div class="nav-dropdown-mobile">
+                    <button class="navbar-mobile-link w-full text-left flex justify-between items-center navbar-mobile-link-active" id="mobile-steps-button"> <!-- Active state for 12 Steps parent -->
+                        The 12 Steps <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div class="pl-4 hidden" id="mobile-steps-dropdown">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
-                <p class="mt-6 text-center text-lg font-medium text-sky-800">
-                    Step Two is the invitation to hope and the first real step toward spiritual awakening and lasting change.
-                </p>
+                <a href="traditions.html" class="navbar-mobile-link">The 12 Traditions</a>
+                <a href="recoveryRelapse.html" class="navbar-mobile-link">Recovery & Relapse</a>
+                <a href="jft.html" class="navbar-mobile-link">Just For Today</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <footer class="mt-12 text-center text-sm text-sky-700 py-6">
-        <p>&copy; <span id="year"></span> NA Step Two Breakdown. For informational and reflective purposes.</p>
+    <main class="animate-fadeIn container-mx-auto py-8">
+        <header class="text-center my-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-sky-700 mb-8"> 
+                A Deep Dive into Step Two of Narcotics Anonymous
+            </h1>
+        </header>
+
+        <div class="bg-sky-500 text-white p-6 rounded-lg mb-8 text-center shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-semibold">Step Two: "We came to believe that a Power greater than ourselves could restore us to sanity."</h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from the Basic Text</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">The Basic Text introduces Step Two as the beginning of hope and the possibility of change.</p>
+                        <ul>
+                            <li><span class="highlight">Restoration to Sanity:</span> "Sanity" is defined as soundness of mind. For addicts, it means freedom from self-destructive thinking and behavior. Step Two is about believing that change is possible.</li>
+                            <li><span class="highlight">A Power Greater Than Ourselves:</span> This step doesn't require defining or understanding a Higher Power, only the willingness to believe that help is possible from outside ourselves.</li>
+                            <li><span class="highlight">Open-mindedness:</span> Step Two asks us to let go of past prejudices and to become open to new ideas and possibilities, especially regarding spirituality and recovery.</li>
+                            <li><span class="highlight">Hope:</span> The step is often the first time many addicts feel genuine hope that they can recover and live differently.</li>
+                            <li><span class="highlight">The Importance of Fellowship:</span> Seeing others recover helps members believe that recovery is possible for them, too.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">The Basic Text emphasizes that Step Two is a process, not a single event. Willingness and open-mindedness are key.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from "It Works: How and Why"</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">"It Works: How and Why" explores the spiritual principles and practical application of Step Two.</p>
+                        <ul>
+                            <li><span class="highlight">Belief Develops Gradually:</span> Step Two doesn't require instant faith—just the willingness to believe that recovery is possible.</li>
+                            <li><span class="highlight">Letting Go of Old Beliefs:</span> Many addicts come to NA with negative or confused ideas about spirituality. Step Two is about letting go of those that no longer serve us.</li>
+                            <li><span class="highlight">Restoration is Ongoing:</span> Sanity is restored little by little as we continue in recovery. This includes rational thinking, healthy decisions, and emotional balance.</li>
+                            <li><span class="highlight">The Role of Experience:</span> By witnessing the recovery of others, we gain evidence that a Power greater than ourselves is at work.</li>
+                            <li><span class="highlight">Personal Understanding:</span> Each member is encouraged to develop their own concept of a Higher Power, without pressure to conform to any specific belief system.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">"It Works" highlights that Step Two is about hope, possibility, and the beginning of a spiritual journey unique to each member.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-xl font-semibold">Insights from the Step Working Guides</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="mb-3">The Step Working Guides provide practical questions and exercises for Step Two.</p>
+                        <ul>
+                            <li><span class="highlight">What Does "Sanity" Mean to Me?:</span> Encourages reflection on how addiction affected one's thinking and behavior, and what sanity might look like in recovery.</li>
+                            <li><span class="highlight">Exploring Belief:</span> Prompts members to examine their beliefs about a Higher Power, spirituality, and what it means to trust something outside themselves.</li>
+                            <li><span class="highlight">Willingness to Change:</span> Asks about openness to new ideas and experiences, and what it would take to believe in the possibility of recovery.</li>
+                            <li><span class="highlight">Evidence of Restoration:</span> Encourages looking for signs, even small ones, that sanity is being restored—such as better decision-making or less chaos.</li>
+                            <li><span class="highlight">Barriers to Belief:</span> Helps members identify fears, doubts, or resentments that may block belief in a Power greater than themselves.</li>
+                        </ul>
+                        <p class="mt-3 emphasis">The guides help make Step Two a personal, practical process—one of honest self-examination and growing hope.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card key-themes-card mt-8">
+                <div class="card-header key-themes-header">
+                    <h3 class="text-2xl font-semibold text-center">Key Themes & Synthesis of Step Two</h3>
+                </div>
+                <div class="card-content">
+                    <p class="mb-4 text-lg">Step Two is the step of hope, possibility, and the beginning of spiritual awakening. Key themes include:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">1. Willingness and Open-mindedness</h4>
+                            <p>Step Two asks only for willingness to believe in the possibility of change and to be open to new ideas about recovery and spirituality.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">2. Hope and Restoration</h4>
+                            <p>Hope replaces despair as we begin to believe that sanity and a better life are possible through recovery.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">3. The Power of Example</h4>
+                            <p>Seeing others recover is powerful evidence that a Power greater than ourselves can work in our lives too.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">4. Individual Spiritual Path</h4>
+                            <p>Each person's understanding of a Higher Power is personal and unique. Step Two encourages exploration, not conformity.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">5. Gradual Process</h4>
+                            <p>Belief and restoration to sanity are not instant—they unfold over time as we continue in recovery.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-sky-700 mb-2">6. Letting Go of the Past</h4>
+                            <p>Step Two involves releasing old beliefs and attitudes that kept us trapped in addiction, making room for new growth.</p>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-center text-lg font-medium text-sky-800">
+                        Step Two is the invitation to hope and the first real step toward spiritual awakening and lasting change.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container-mx-auto">
+            <div class="mb-6">
+              <h3 class="text-xl font-semibold text-sky-800 mb-3">Literature & Resources</h3>
+              <ul class="list-none space-y-2 text-gray-600">
+                <li><a href="assets/basic-text-sixth-edition.pdf" target="_blank">Basic Text of Narcotics Anonymous (Sixth Edition)</a></li>
+                <li><a href="assets/it-works-how-and-why.pdf" target="_blank">It Works How and Why</a></li>
+                <li><a href="assets/step-working-guide.pdf" target="_blank">The NA Step Working Guides</a></li>
+                <li><a href="assets/just-for-today.pdf" target="_blank">Just For Today (Full PDF)</a></li>
+              </ul>
+            </div>
+            <p>&copy; <span id="currentYear"></span> NA Information Website. Content adapted from NA Fellowship-approved literature.</p>
+            <p>Narcotics Anonymous, NA, and the NA Way are registered trademarks of Narcotics Anonymous World Services, Inc.</p>
+        </div>
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        // Footer Year & Navbar JS
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+        const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+        
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                if(mobileMenuIconOpen && mobileMenuIconClose){
+                    mobileMenuIconOpen.classList.toggle('hidden');
+                    mobileMenuIconClose.classList.toggle('hidden');
+                }
+            });
+        }
 
+        const mobileStepsButton = document.getElementById('mobile-steps-button');
+        const mobileStepsDropdown = document.getElementById('mobile-steps-dropdown');
+        if (mobileStepsButton && mobileStepsDropdown) {
+            mobileStepsButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                mobileStepsDropdown.classList.toggle('hidden');
+            });
+        }
+
+        // Steps Data for nav dropdowns
+        const stepsData = [
+          { id: 1, title: "Step One" }, { id: 2, title: "Step Two" }, { id: 3, title: "Step Three" },
+          { id: 4, title: "Step Four" }, { id: 5, title: "Step Five" }, { id: 6, title: "Step Six" },
+          { id: 7, title: "Step Seven" }, { id: 8, title: "Step Eight" }, { id: 9, title: "Step Nine" },
+          { id: 10, title: "Step Ten" }, { id: 11, title: "Step Eleven" }, { id: 12, title: "Step Twelve" }
+        ];
+
+        // Populate step links in navbar dropdowns
+        const desktopDropdown = document.querySelector('.nav-dropdown-content');
+        const mobileDropdownContainerForNav = document.getElementById('mobile-steps-dropdown');
+        const currentPathForNav = window.location.pathname.split('/').pop() || 'index.html';
+
+        if (desktopDropdown) {
+            desktopDropdown.innerHTML = ''; 
+            stepsData.forEach(step => {
+                const link = document.createElement('a');
+                link.href = `step${step.id}.html`;
+                link.textContent = step.title;
+                if (`step${step.id}.html` === currentPathForNav) {
+                    link.classList.add('navbar-link-active'); 
+                }
+                desktopDropdown.appendChild(link);
+            });
+        }
+
+        if (mobileDropdownContainerForNav) {
+            mobileDropdownContainerForNav.innerHTML = ''; 
+            stepsData.forEach(step => {
+                const link = document.createElement('a');
+                link.href = `step${step.id}.html`;
+                link.textContent = step.title;
+                link.className = 'navbar-mobile-link block';
+                 if (`step${step.id}.html` === currentPathForNav) {
+                    link.classList.add('navbar-mobile-link-active'); 
+                }
+                mobileDropdownContainerForNav.appendChild(link);
+            });
+        }
+        
+        // General Nav Link Active State
+        const navLinks = document.querySelectorAll('.navbar-link, .navbar-mobile-link');
+        navLinks.forEach(link => {
+            const linkPath = (link.getAttribute('href') || '').split('/').pop();
+            if (!link.closest('.nav-dropdown-content') && !link.closest('#mobile-steps-dropdown')) {
+                 if (linkPath === currentPathForNav && linkPath !== '') { // ensure not empty string from base path
+                    link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+                 } else if ((currentPathForNav === 'index.html' || currentPathForNav === '') && linkPath === 'index.html') {
+                    link.classList.add('navbar-link-active', 'navbar-mobile-link-active');
+                 } else {
+                     link.classList.remove('navbar-link-active', 'navbar-mobile-link-active');
+                 }
+            }
+        });
+        
+        if (currentPathForNav.startsWith('step') && currentPathForNav.endsWith('.html')) {
+            document.querySelectorAll('.navbar-link, .navbar-mobile-link').forEach(parentLink => {
+                const desktopDropdownButton = parentLink.closest('.nav-dropdown')?.querySelector('button.navbar-link');
+                if(desktopDropdownButton && desktopDropdownButton.textContent.includes('The 12 Steps')) {
+                    desktopDropdownButton.classList.add('navbar-link-active');
+                }
+                const mobileDropdownButton = parentLink.closest('.nav-dropdown-mobile')?.querySelector('button.navbar-mobile-link');
+                 if(mobileDropdownButton && mobileDropdownButton.textContent.includes('The 12 Steps')) {
+                    mobileDropdownButton.classList.add('navbar-mobile-link-active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
