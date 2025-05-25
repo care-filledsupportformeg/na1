@@ -1,45 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-g" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="NA Recovery Resources"
-    />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narcotics Anonymous Resources | Steps, Traditions, Recovery</title>
+    <!-- React CDN Links -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel CDN Link -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        #navbar {
+            background-color: #007bff; /* NA Blue */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+        #navbar ul li {
+            margin: 0.5rem 1rem; /* Responsive margin */
+        }
+        #navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        #navbar ul li a:hover, #navbar ul li a.active {
+            text-decoration: underline;
+            color: #e0e0e0; /* Lighter shade for hover/active */
+        }
+        .container {
+            width: 90%; /* Responsive width */
+            max-width: 1200px; /* Max width for large screens */
+            margin: 2rem auto; /* Centering and spacing */
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .page-title {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .card-title {
+            color: #007bff;
+            margin-top: 0;
+        }
+        /* Prose-like styling for general text content */
+        .prose-custom p, .prose-custom ul, .prose-custom ol {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        .prose-custom ul, .prose-custom ol {
+            padding-left: 2rem; /* Indentation for lists */
+        }
+        .prose-custom li {
+            margin-bottom: 0.5rem;
+        }
+        .prose-custom h1, .prose-custom h2, .prose-custom h3 {
+            color: #0056b3; /* Darker blue for headings */
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .prose-custom a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .prose-custom a:hover {
+            text-decoration: underline;
+        }
+        /* Note for IP references */
+        .ip-reference-note {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 2em;
+            border-top: 1px solid #eee;
+            padding-top: 1em;
+        }
+        /* Simple loader */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #007bff; /* Blue */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>NA Recovery Resources</title>
-    <script defer="defer" src="/static/js/main.70b95323.js"></script>
-    <link href="/static/css/main.d19f8a84.css" rel="stylesheet" />
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+        /* CSS from JustForToday Page (NA Daily Reflections) - body bg color omitted */
+        /* body specific styles from JFT page are omitted or merged carefully if necessary */
+        /* .container style from JFT page is distinct, use as is or namespace if needed */
+        /* For this integration, JFT specific styles are namespaced or use existing base styles */
+        
+        .jft-container { /* Namespaced container for JFT page specifically */
+            width: 80%; /* As per JFT page spec */
+            margin: auto;
+            overflow: hidden;
+            padding: 20px; /* Can be adjusted if it conflicts with global .container padding */
+        }
+
+        .jft-header { /* Namespaced header for JFT page */
+            background: #004080; /* Dark blue from JFT */
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .jft-header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .reflection-section { /* From JFT page */
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .reflection-section h2 { /* From JFT page */
+            color: #004080; /* Dark blue from JFT */
+            margin-top: 0;
+        }
+        #current-date { /* From JFT page */
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        #jft-reading-content h3 { /* JFT title from JFT page */
+            color: #0056b3; /* Slightly lighter blue from JFT */
+            margin-bottom: 0.5em;
+        }
+        #jft-reading-content p, /* JFT text from JFT page */
+        #basic-text-content p, /* Basic Text excerpt from JFT page */
+        #summary-content p { /* Summary text from JFT page */
+            text-align: justify;
+        }
+        #jft-reading-content em { /* Emphasis within JFT text from JFT page */
+            font-weight: bold; 
+            color: #333; 
+        }
+        .basic-text-excerpt { /* Styling for the Basic Text excerpt paragraph from JFT page */
+            font-size: 0.9em;
+            color: #444; 
+            border-left: 3px solid #007bff; /* NA blue from JFT */
+            padding-left: 10px;
+            margin-top: 10px; 
+        }
+        .jft-footer { /* Namespaced footer for JFT page */
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script type="text/babel">
+const JustForTodayPage = () => {
+    const { useState, useEffect } = React;
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    const jftData = {
+        "01-01": "New Year's Day: We admitted we were powerless over our addiction, that our lives had become unmanageable.",
+        "01-02": "January 2: Came to believe that a Power greater than ourselves could restore us to sanity.",
+        "01-03": "January 3: Made a decision to turn our will and our lives over to the care of God as we understood Him.",
+        "12-31": "December 31: Having had a spiritual awakening as the result of these steps, we tried to carry this message to addicts, and to practice these principles in all our affairs."
+    };
+    const basicTextExcerpt = {
+        "page1": "This is an excerpt from page 1 of the Basic Text. It talks about who is an addict.",
+        "page55": "This is an excerpt from page 55 of the Basic Text. It discusses the concept of surrender.",
+        "page78": "This is an excerpt from page 78 of the Basic Text, focusing on the NA fellowship.",
+        "page100": "This is an excerpt from page 100 of the Basic Text, detailing the promises."
+    };
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    const getCurrentDateString = () => {
+        const today = new Date();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        return `${month}-${day}`;
+    };
+
+    const formatJFTForDisplay = (jftEntry) => {
+        if (!jftEntry) return "<p>No reading available for today.</p>";
+        const parts = jftEntry.split(':');
+        const title = parts[0].trim();
+        const text = parts.slice(1).join(':').trim();
+        const sanitizedText = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        return `<h3>${title}</h3><p>"<em>${sanitizedText}</em>"</p>`;
+    };
+
+    const formatBasicTextForDisplay = (page, excerpt) => {
+        if (!excerpt) return "";
+        const sanitizedExcerpt = excerpt.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        return `<p class="basic-text-excerpt">Basic Text Excerpt (Page ${page}): "${sanitizedExcerpt}"</p>`;
+    };
+
+    const getSummary = async (textToSummarize) => {
+        const API_KEY = ""; 
+        if (!API_KEY) {
+            const coreMessageMatch = textToSummarize.match(/<em>(.*?)<\/em>/);
+            if (coreMessageMatch && coreMessageMatch[1]) {
+                return `<p>${coreMessageMatch[1]}</p>`;
+            }
+            return `<p>${textToSummarize}</p>`;
+        }
+        // Placeholder for actual API call logic
+        return `<p>Summary of: ${textToSummarize}</p>`;
+    };
+
+    const [currentDateDisplay, setCurrentDateDisplay] = useState('');
+    const [jftReadingHtml, setJftReadingHtml] = useState('');
+    const [basicTextHtml, setBasicTextHtml] = useState('');
+    const [summaryHtml, setSummaryHtml] = useState('');
+    const [year, setYear] = useState('');
+
+    useEffect(() => {
+        const dateStr = getCurrentDateString();
+        const today = new Date();
+        setCurrentDateDisplay(`${today.toLocaleString('default', { month: 'long' })} ${today.getDate()}, ${today.getFullYear()}`);
+        setYear(today.getFullYear().toString());
+
+        const jftEntry = jftData[dateStr] || "No reading available for today.";
+        const formattedJft = formatJFTForDisplay(jftEntry);
+        setJftReadingHtml(formattedJft);
+
+        const excerptKeys = Object.keys(basicTextExcerpt);
+        const randomKey = excerptKeys[Math.floor(Math.random() * excerptKeys.length)];
+        const randomExcerpt = basicTextExcerpt[randomKey];
+        setBasicTextHtml(formatBasicTextForDisplay(randomKey.replace('page',''), randomExcerpt));
+
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = formattedJft;
+        const jftTextContent = tempDiv.querySelector('p')?.textContent || tempDiv.textContent || '';
+        
+        getSummary(jftTextContent.replace(/"/g, '').trim()).then(summaryResult => {
+            setSummaryHtml(summaryResult);
+        });
+    }, []);
+
+    return (
+        <div className="jft-container"> {/* Using namespaced container */}
+            <header className="jft-header"> {/* Using namespaced header */}
+                <h1>NA Daily Reflections</h1>
+            </header>
+            <main>
+                <section id="jft" className="reflection-section">
+                    <h2>Just for Today</h2>
+                    <p id="current-date">{currentDateDisplay}</p>
+                    <div id="jft-reading-content" dangerouslySetInnerHTML={{ __html: jftReadingHtml }}></div>
+                </section>
+                <section id="basic-text" className="reflection-section">
+                    <h2>Basic Text Excerpt</h2>
+                    <div id="basic-text-content" dangerouslySetInnerHTML={{ __html: basicTextHtml }}></div>
+                </section>
+                <section id="summary" className="reflection-section">
+                    <h2>Summary</h2>
+                    <div id="summary-content" dangerouslySetInnerHTML={{ __html: summaryHtml }}></div>
+                </section>
+            </main>
+            <footer className="jft-footer"> {/* Using namespaced footer */}
+                <p>&copy; <span id="year">{year}</span> NA Reflections App</p>
+            </footer>
+        </div>
+    );
+};
+
+        const { useState, useEffect } = React;
+
+        // Placeholder for HomePage Content
+        const HomePage = () => (
+            <div className="prose-custom">
+                <h1 className="page-title">Welcome to NA Recovery Resources</h1>
+                <div className="card">
+                    <h2 className="card-title">About This Site</h2>
+                    <p>This website provides access to various Narcotics Anonymous recovery literature and resources. Our goal is to offer these materials in an accessible and easy-to-navigate format for NA members and those interested in learning more about the NA program.</p>
+                    <p>Narcotics Anonymous is a global, community-based organization with a multilingual and multicultural membership. NA was founded in 1953, and NA members are now holding nearly 76,000 meetings in 143 countries per week.</p>
+                </div>
+                <div className="card">
+                    <h2 className="card-title">What is the NA Program?</h2>
+                    <p>NA is a nonprofit fellowship or society of men and women for whom drugs had become a major problem. We are recovering addicts who meet regularly to help each other stay clean. This is a program of complete abstinence from all drugs. There is only one requirement for membership, the desire to stop using.</p>
+                    <p>We suggest that you keep an open mind and give yourself a break. Our program is a set of principles written so simply that we can follow them in our daily lives. The most important thing about them is that they work.</p>
+                    <p>For more detailed information, please visit the <a href="#whatIsNA" onClick={() => window.location.hash = 'whatIsNA'}>What is NA?</a> section.</p>
+                </div>
+                 <div className="card">
+                    <h2 className="card-title">NA Literature</h2>
+                    <p>This site provides access to several key pieces of NA literature, including:</p>
+                    <ul>
+                        <li>The Basic Text</li>
+                        <li>It Works: How and Why</li>
+                        <li>The Step Working Guides</li>
+                        <li>Just For Today (Meditations)</li>
+                    </ul>
+                    <p>These resources are fundamental to understanding the NA program and its principles of recovery.</p>
+                </div>
+            </div>
+        );
+
+        // Placeholder for WhatIsNAPage Content
+        const WhatIsNAPage = () => (
+            <div className="prose-custom">
+                <h1 className="page-title">What is NA?</h1>
+                <div className="card">
+                    <p>"NA is a nonprofit fellowship or society of men and women for whom drugs had become a major problem. We are recovering addicts who meet regularly to help each other stay clean. This is a program of complete abstinence from all drugs. There is only one requirement for membership, the desire to stop using. We suggest that you keep an open mind and give yourself a break. Our program is a set of principles written so simply that we can follow them in our daily lives. The most important thing about them is that they work."</p>
+                    <p>"There are no strings attached to NA. We are not affiliated with any other organizations. We have no initiation fees or dues, no pledges to sign, no promises to make to anyone. We are not connected with any political, religious, or law enforcement groups, and are under no surveillance at any time. Anyone may join us regardless of age, race, sexual identity, creed, religion, or lack of religion."</p>
+                    <p>"We are not interested in what or how much you used or who your connections were, what you have done in the past, how much or how little you have, but only in what you want to do about your problem and how we can help. The newcomer is the most important person at any meeting, because we can only keep what we have by giving it away. We have learned from our group experience that those who keep coming to our meetings regularly stay clean."</p>
+                     <p className="ip-reference-note">The above text is excerpted from the White Booklet, "Narcotics Anonymous."</p>
+                </div>
+            </div>
+        );
+
+        // Placeholder for TraditionsPage Content (Content to be added or remain placeholder)
+        const TraditionsPage = () => (
+            <div className="prose-custom">
+                <h1 className="page-title">The Twelve Traditions of NA</h1>
+                 <div className="card">
+                    <p>The Twelve Traditions of NA are guiding principles for our fellowship. They help ensure our unity and preserve our primary purpose: to carry the message to the addict who still suffers.</p>
+                    <ol>
+                        <li>Our common welfare should come first; personal recovery depends on NA unity.</li>
+                        <li>For our group purpose there is but one ultimate authority—a loving God as He may express Himself in our group conscience. Our leaders are but trusted servants; they do not govern.</li>
+                        <li>The only requirement for membership is a desire to stop using.</li>
+                        <li>Each group should be autonomous except in matters affecting other groups or NA as a whole.</li>
+                        <li>Each group has but one primary purpose—to carry the message to the addict who still suffers.</li>
+                        <li>An NA group ought never endorse, finance, or lend the NA name to any related facility or outside enterprise, lest problems of money, property, or prestige divert us from our primary purpose.</li>
+                        <li>Every NA group ought to be fully self-supporting, declining outside contributions.</li>
+                        <li>Narcotics Anonymous should remain forever nonprofessional, but our service centers may employ special workers.</li>
+                        <li>NA, as such, ought never be organized, but we may create service boards or committees directly responsible to those they serve.</li>
+                        <li>Narcotics Anonymous has no opinion on outside issues; hence the NA name ought never be drawn into public controversy.</li>
+                        <li>Our public relations policy is based on attraction rather than promotion; we need always maintain personal anonymity at the level of press, radio, and films.</li>
+                        <li>Anonymity is the spiritual foundation of all our Traditions, ever reminding us to place principles before personalities.</li>
+                    </ol>
+                    <p className="ip-reference-note">The Twelve Traditions are adapted with permission from AA and are part of NA's foundational literature.</p>
+                </div>
+            </div>
+        );
+        
+        // Placeholder for RecoveryRelapsePage (Content to be added or remain placeholder)
+        const RecoveryRelapsePage = () => (
+            <div className="prose-custom">
+                <h1 className="page-title">Recovery and Relapse</h1>
+                <div className="card">
+                    <p>Recovery in Narcotics Anonymous is a journey, not a destination. It involves ongoing growth and application of spiritual principles in everyday life. Relapse, or a return to using, can be part of this journey for some members. NA offers a path back to recovery for those who relapse.</p>
+                    <h3>Understanding Relapse</h3>
+                    <p>Relapse is not a failure, but rather an indication that we may need to redouble our efforts, re-examine our program, or seek more support from the fellowship. The NA program provides tools to help prevent relapse and to recover if it occurs.</p>
+                    <h3>Returning from a Relapse</h3>
+                    <p>If you have relapsed, we encourage you to return to NA meetings as soon as possible. You will be welcomed back with understanding and support. The desire to stop using is the only requirement for membership.</p>
+                    <p className="ip-reference-note">This information is based on the collective experience of NA members and principles found in NA literature.</p>
+                </div>
+            </div>
+        );
+
+        {/* IP Literature Page Placeholders - These would ideally load PDF content or link to it */}
+        const ItWorksPage = () => <div className="prose-custom"><h1 className="page-title">It Works: How and Why</h1><div className="card"><p>Content for "It Works: How and Why" would be displayed here. (e.g., PDF viewer or text).</p></div></div>;
+        const StepWorkingGuidePage = () => <div className="prose-custom"><h1 className="page-title">Step Working Guides</h1><div className="card"><p>Content for "Step Working Guides" would be displayed here.</p></div></div>;
+        const JustForTodayPDFPage = () => <div className="prose-custom"><h1 className="page-title">Just For Today (Meditations PDF)</h1><div className="card"><p>Content for "Just For Today (Meditations)" would be displayed here.</p></div></div>;
+        const BasicTextPage = () => <div className="prose-custom"><h1 className="page-title">Basic Text</h1><div className="card"><p>Content for the "Basic Text" would be displayed here.</p></div></div>;
+
+
+        const Navbar = () => {
+            const [activePage, setActivePage] = useState(window.location.hash.substring(1) || 'home');
+
+            useEffect(() => {
+                const handleHashChange = () => {
+                    setActivePage(window.location.hash.substring(1) || 'home');
+                };
+                window.addEventListener('hashchange', handleHashChange);
+                return () => window.removeEventListener('hashchange', handleHashChange);
+            }, []);
+
+            const navLinks = [
+                { name: "Home", page: "home" },
+                { name: "What is NA?", page: "whatIsNA" },
+                { name: "Just for Today", page: "justfortoday" }, // Added new page
+                { name: "The 12 Traditions", page: "traditions" },
+                /* IP Lit placeholder */
+                { name: "It Works How & Why", page: "itWorks" },
+                { name: "Step Working Guide", page: "stepWorkingGuide" },
+                { name: "Just For Today (PDF)", page: "justForTodayPDF" }, 
+                { name: "Basic Text", page: "basicText" },
+                /* End IP Lit placeholder */
+                { name: "Recovery & Relapse", page: "recoveryRelapse" }
+            ];
+
+            return (
+                <nav id="navbar">
+                    <ul>
+                        {navLinks.map(link => (
+                            <li key={link.page}>
+                                <a 
+                                    href={`#${link.page}`} 
+                                    className={activePage === link.page ? 'active' : ''}
+                                    onClick={() => {
+                                        window.location.hash = link.page;
+                                    }}
+                                >
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            );
+        };
+
+        const App = () => {
+            const [currentPage, setCurrentPage] = useState('home');
+            const [loading, setLoading] = useState(true);
+
+            useEffect(() => {
+                setLoading(false); 
+                const handleHashChange = () => {
+                    const hash = window.location.hash.substring(1) || 'home';
+                    if (['home', 'whatIsNA', 'traditions', 'justfortoday', 'recoveryRelapse', 'itWorks', 'stepWorkingGuide', 'justForTodayPDF', 'basicText'].includes(hash)) { // Added 'justfortoday'
+                        setCurrentPage(hash);
+                    } else {
+                        window.location.hash = 'home'; 
+                        setCurrentPage('home');
+                    }
+                };
+
+                window.addEventListener('hashchange', handleHashChange);
+                handleHashChange(); 
+
+                return () => window.removeEventListener('hashchange', handleHashChange);
+            }, []);
+
+            if (loading) {
+                return <div className="loader"></div>;
+            }
+
+            let pageContent;
+            switch (currentPage) {
+                case 'home':
+                    pageContent = <HomePage />;
+                    break;
+                case 'whatIsNA':
+                    pageContent = <WhatIsNAPage />;
+                    break;
+                case 'traditions':
+                    pageContent = <TraditionsPage />;
+                    break;
+                case 'justfortoday': // Added new page case
+                    pageContent = <JustForTodayPage />;
+                    break;
+                case 'recoveryRelapse':
+                    pageContent = <RecoveryRelapsePage />;
+                    break;
+                case 'itWorks':
+                    pageContent = <ItWorksPage />;
+                    break;
+                case 'stepWorkingGuide':
+                    pageContent = <StepWorkingGuidePage />;
+                    break;
+                case 'justForTodayPDF': 
+                    pageContent = <JustForTodayPDFPage />;
+                    break;
+                case 'basicText':
+                    pageContent = <BasicTextPage />;
+                    break;
+                default:
+                    pageContent = <HomePage />;
+            }
+
+            return (
+                <React.Fragment>
+                    <Navbar />
+                    <div className="container"> {/* This is the main app container */}
+                        {pageContent}
+                    </div>
+                </React.Fragment>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
 </html>
